@@ -1,32 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport"    content="width=device-width, initial-scale=1.0">
-	<meta name="description" content="Website for ITSP 2014">
-	<meta name="author"      content="Prateek Chandan">
-	
-	<title>ITSP 2014</title>
-
-	<link rel="shortcut icon" href="assets/images/gt_favicon.png">
-	
-	<link rel="stylesheet" media="screen" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
-	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
-	<link rel="stylesheet" href="assets/css/font-awesome.min.css">
-
-	<!-- Custom styles for our template -->
-	<link rel="stylesheet" href="assets/css/bootstrap-theme.css" media="screen" >
-	<link rel="stylesheet" href="assets/css/main.css">
-
-	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-	<!--[if lt IE 9]>
-	<script src="assets/js/html5shiv.js"></script>
-	<script src="assets/js/respond.min.js"></script>
-	<![endif]-->
-</head>
-
-<body class="home">
-	<!-- Fixed navbar -->
+<?php include "header.php"; ?>
 	<div class="navbar navbar-inverse navbar-fixed-top headroom" >
 		<div class="container">
 			<div class="navbar-header">
@@ -136,26 +108,52 @@
 			<div class="col-sm-6">
 				<h2 class="text-center top-space">Call for Mentors</h2>
 				<h3>Why become an ITSP Mentor?</h3>
-				<p class="check"><i class="fa fa-check">&nbsp;&nbsp;You love doing tech and want to create a real difference in the Institute tech scene .</i><br>
-				 <i class="fa fa-check">&nbsp;&nbsp;As you mentor 2 teams over this summer you will get a unique opportunity to learn as you teach.</i><br>
-				 <i class="fa fa-check">&nbsp;&nbsp; An experience of mentorship which will stay with you for the rest of your life.</i><br>
-				<i class="fa fa-check">&nbsp;&nbsp;As you mentor and co-ordinate with students, you will help them set their deadlines and a POA and make sure they achieve those.</i><br>
-				 <i class="fa fa-check">&nbsp;&nbsp;We will most definitely certify the help you have provided.</i><br>
-				<i class="fa fa-check">&nbsp;&nbsp;Your words will influence a batch of freshmen who are the future of the IIT Bombay Tech Scene.</i> <br>
-				We plan to assign one ITSP Mentor for every 2 teams. You can be both on campus or off campus during the summer for being a part of this program. Though on campus mentors would be preferred.<br>
+				<p class="check"><i class="fa fa-check-circle-o">&nbsp;&nbsp;You love doing tech and want to create a real difference in the Institute tech scene .</i><br>
+				 <i class="fa fa-check-circle-o">&nbsp;&nbsp;As you mentor 2 teams over this summer you will get a unique opportunity to learn as you teach.</i><br>
+				 <i class="fa fa-check-circle-o">&nbsp;&nbsp; An experience of mentorship which will stay with you for the rest of your life.</i><br>
+				<i class="fa fa-check-circle-o">&nbsp;&nbsp;As you mentor and co-ordinate with students, you will help them set their deadlines and a POA and make sure they achieve those.</i><br>
+				 <i class="fa fa-check-circle-o">&nbsp;&nbsp;We will most definitely certify the help you have provided.</i><br>
+				<i class="fa fa-check-circle-o">&nbsp;&nbsp;Your words will influence a batch of freshmen who are the future of the IIT Bombay Tech Scene.</i> <br>
+				<h4>We plan to assign one ITSP Mentor for every 2 teams. You can be both on campus or off campus during the summer for being a part of this program. Though on campus mentors would be preferred.</h4>
 				            <a href="https://billa.typeform.com/to/iR9cbK">Register here</a></p>
 			</div>
 		</div> <!-- /row -->
 
+		<div id="myCarousel" class="carousel slide jumbotron top-space" data-interval="4000" data-pause="hover">
+                                    <ol class="carousel-indicators">
+                                        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                                        <li data-target="#myCarousel" data-slide-to="1"></li>
+                                        <li data-target="#myCarousel" data-slide-to="2"></li>
+                                        <li data-target="#myCarousel" data-slide-to="3"></li>
+                                        <li data-target="#myCarousel" data-slide-to="4"></li>
+                                     
+                                    </ol>
+    <!-- Carousel items -->
+    <div class="carousel-inner">
+    	<div class="item active"><h4>"ITSP is a great place where you can turn your imaginations into reality. 
+    	This is where really your tech begins at IITB. You get chance to learn a lot with the Mentors , Friends ,seniors , research and other resources. Needless to say LOT OF FUN"</h4>
+        <p class="text-right"><a class="btn btn-primary btn-large">Prateek Chandan</a></p></div>
+        <div class="item"><h4>"I think ITSP is a good platform where we can integrate
+        our descrete ideas to make something usable and also learn a lot in the process. I made"image 
+        processing bot" and through this i learned a lot of image processing."</h4>
+        <p class="text-right"><a class="btn btn-primary btn-large">Akash Verma</a></p></div>
+        <div class="item"><h4>" I am very much interested in tech and in ITSP i got
+        an opportunity to do a lot of technical activities.Also i learned a lot of softwares.
+        Really ITSP is the bestway to utilize summer."</h4>
+        <p class="text-right"><a class="btn btn-primary btn-large">Mohit Kumar Jain</a></p></div>
+        <div class="item"><h4>" Its a way to know your real potential in tech as acads don't disturb you. You get experience to work with some out of box stuff and you extract something real and new out of it.
+        Its really nice, you get to do what you want to do with few constraints of course."</h4>
+        <p class="text-right"><a class="btn btn-primary btn-large">Vinay Bagul</a></p></div>
+        <div class="item"><h4>" The institute technical summer project initiative started by the 
+			stab played a very important role in explaining the difference between a "jugaad" project and a
+			 professional project. The infinite night-outs, the deadlines, the frustrating codes, the solder 
+			 burns and the never working circuits taught us that for the success of any project, a systematic
+			  approach is of utmost importance."</h4>
+     		<p class="text-right"><a class="btn btn-primary btn-large">Jayesh Hannurkar</a></p></div>
+      	
 
-
-		<div class="jumbotron top-space">
-			<h4>" The institute technical summer project initiative started by the stab played a very important role in explaining the difference between a "jugaad" project and a professional project. The infinite night-outs, the deadlines, the frustrating codes, the solder burns and the never working circuits taught us that for the success of any project, a systematic approach is of utmost importance."
-
-
-</h4>
-     		<p class="text-right"><a class="btn btn-primary btn-large">Jayesh Hannurkar</a></p>
-  		</div>
+    </div>
+</div>
 
 </div>	<!-- /container -->
 	
@@ -176,86 +174,4 @@
 	</section>
 	<!-- /social links -->
 
-
-	<footer id="footer" class="top-space">
-
-		<div class="footer1">
-			<div class="container">
-				<div class="row">
-					
-					<div class="col-md-3 widget">
-						<h3 class="widget-title">Contact</h3>
-						<div class="widget-body">
-							<!--p>+234 23 9873237<br-->
-								<a href="mailto:rahul.prajapat9@gmail.com">rahul.prajapat9@gmail.com</a><br>
-								<br>
-								Overall Coordinator , STAB
-							</p>	
-						</div>
-					</div>
-
-					<div class="col-md-3 widget">
-						<h3 class="widget-title">Follow me</h3>
-						<div class="widget-body">
-							<p class="follow-me-icons">
-								<a href=""><i class="fa fa-twitter fa-2"></i></a>
-								<a href=""><i class="fa fa-dribbble fa-2"></i></a>
-								<a href=""><i class="fa fa-github fa-2"></i></a>
-								<a href=""><i class="fa fa-facebook fa-2"></i></a>
-							</p>	
-						</div>
-					</div>
-
-					<div class="col-md-6 widget">
-						<h3 class="widget-title">About STAB</h3>
-						<div class="widget-body">
-							<p>Broken that toy to see of how that spring worked. Failed miserably at putting that FM Radio back together after unscrewing it to take a peek. Remember the sense of elation reading 'Hello World' on the screen. As you might have guessed coming to IITB you are not alone. From circuit benders to star gazers we have it all here. Technical Activities (lovingly abbreviated by IITB lingo to Tech) here provide a vast scope for fulfilling those geek pangs.</p>
-						</div>
-					</div>
-
-				</div> <!-- /row of widgets -->
-			</div>
-		</div>
-
-		<div class="footer2">
-			<div class="container">
-				<div class="row">
-					
-					<div class="col-md-6 widget">
-						<div class="widget-body">
-							<p class="simplenav">
-								<a href="#">Home</a> | 
-								<a href="about.php">About</a> |
-								<a href="sidebar-right.php">Timeline</a> |
-								<a href="contact.php">Archive</a> |
-								<b><a href="signup.php">FAQs</a></b>
-							</p>
-						</div>
-					</div>
-
-					<div class="col-md-6 widget">
-						<div class="widget-body">
-							<p class="text-right">
-								Copyright &copy; 2014, <a href="http://www.stab-iitn.org">STAB</a><a href="http://www.iitb.ac.in"> IITB</a>. Designed by <a href="http://www.cse.iitb.ac.in/~prateekchandan/" rel="designer">Prateek Chandan</a> 
-							</p>
-						</div>
-					</div>
-
-				</div> <!-- /row of widgets -->
-			</div>
-		</div>
-
-	</footer>	
-		
-
-
-
-
-	<!-- JavaScript libs are placed at the end of the document so the pages load faster -->
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-	<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-	<script src="assets/js/headroom.min.js"></script>
-	<script src="assets/js/jQuery.headroom.min.js"></script>
-	<script src="assets/js/template.js"></script>
-</body>
-</html>
+	<?php include "downbar.php"; ?>
