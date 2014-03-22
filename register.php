@@ -4,7 +4,7 @@ session_start();
 if(isset($_SESSION['id']))
 	$user=$_SESSION['id'];
 else
-	$user=fase;
+	$user=false;
 $userdata=mysqli_fetch_assoc(mysqli_query($con,"select * from signup_user where id=".$user));
 $name=$user['first_name'].' '.['last_name'];
 ?>
