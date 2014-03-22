@@ -13,7 +13,7 @@
 					<li><a href="FAQ.php">FAQ</a></li>
 					<li><a href="archive.php">Archive</a></li>
 					<li><a href="about.php">About</a></li>
-					<li class="active"><a class="btn" href="signin.php">REGISTER</a></li>
+					<li><a class="btn" href="signin.php">REGISTER</a></li>
 				</ul>
 			</div><!--/.nav-collapse -->
 		</div>
