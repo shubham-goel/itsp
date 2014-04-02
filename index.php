@@ -13,7 +13,7 @@
 					<li><a href="FAQ.php">FAQ</a></li>
 					<li><a href="archive.php">Archive</a></li>
 					<li><a href="about.php">About</a></li>
-					<li><a class="btn" href="signin.php">REGISTER</a></li>
+					<li><a class="btn" href="register.php">REGISTER</a></li>
 				</ul>
 			</div><!--/.nav-collapse -->
 		</div>
@@ -25,8 +25,8 @@
 		<div class="container">
 			<div class="row">
 				<h1 class="lead">Institute Technical Summer Projects 2014</h1>
-				<p class="tagline">Make your ideas shape into reality</p>
-				<p><a class="btn btn-action btn-lg" role="button">REGISTER</a></p>
+				<p class="tagline">Think.Create.Inspire</p>
+				<p><a class="btn btn-action btn-lg" role="button" href="register.php">REGISTER</a></p>
 			</div>
 		</div>
 	</header>
@@ -48,35 +48,35 @@
 	<div class="jumbotron top-space">
 		<div class="container">
 			
-			<h3 class="text-center thin">ITSPecial! Summer is coming</h3>
+			<h3 class="text-center thin">ITSPecial!</h3>
 			
 			<div class="row">
 				<div class="col-md-3 col-sm-6 highlight">
 					<div class="h-caption"><h4><i class="fa fa-briefcase fa-5"></i>ARCHIVES</h4></div>
 					<div class="h-body text-center">
 						<p>Check out the previous year projects of ITSP<br> and get a feel of the ITSP</p>
-						<a class="btn  btn-primary">Check it</a>
+						<a class="btn  btn-primary" href="archive.php">Check it</a>
 					</div>
 				</div>
 				<div class="col-md-3 col-sm-6 highlight">
 					<div class="h-caption"><h4><i class="fa fa-calendar fa-5"></i>EVENT TIMELINE</h4></div>
 					<div class="h-body text-center">
-						<p>Be informed about everything about ITSP 2013<br> Check our Event Timeline</p>
-						<a class="btn  btn-primary">Check it</a>
+						<p>Be informed about everything about ITSP 2014<br> Check our Event Timeline</p>
+						<a class="btn  btn-primary" href="timeline.php">Check it</a>
 					</div>
 				</div>
 				<div class="col-md-3 col-sm-6 highlight">
 					<div class="h-caption"><h4><i class="fa fa-pencil fa-5"></i>Register</h4></div>
 					<div class="h-body text-center">
 						<p>Register yor Team for ITSP 2014 .<br>And be Awesome!</p>
-						<a class="btn  btn-primary">Register</a>
+						<a class="btn  btn-primary" href="register.php">Register</a>
 					</div>
 				</div>
 				<div class="col-md-3 col-sm-6 highlight">
 					<div class="h-caption"><h4><i class="fa fa-exclamation-circle fa-5"></i>HAVE ANY DOUBTS?</h4></div>
 					<div class="h-body text-center">
 						<p>Read all the Frequently Asked questions regarding ITSP<br> Check the FAQS here.</p>
-						<a class="btn  btn-primary">Check it</a>
+						<a class="btn  btn-primary" href="FAQ.php">Resolve it</a>
 					</div>
 				</div>
 			</div> <!-- /row  -->
@@ -95,15 +95,15 @@
 			<h2 class="text-center top-space">Checklist</h2>
 				<p class="check"><i class="fa fa-check">&nbsp;&nbsp;Get an idea</i><br>
                         <i class="fa fa-check">&nbsp;&nbsp;Form a Team</i><br>
-                        <i class="fa fa-check">&nbsp;&nbsp;Attend Hostel Orientation on  2nd, 3rd and 4th April </i><br>
-                        <i class="fa fa-check">&nbsp;&nbsp;<span class="violet">Still no iDEA</span>,Attend Brainstorming sessions on 5th April</i><br>
+                        <i class="fa fa-check">&nbsp;&nbsp;<span class="violet">No iDEA</span>,Attend Brainstorming sessions on 28th and 30th March</i><br>
+                        <i class="fa fa-check">&nbsp;&nbsp;<a href="register.php">Register</a> your Team</i><br>
                         <i class="fa fa-check">&nbsp;&nbsp;Propose a project</i><br>
-                        <i class="fa fa-check">&nbsp;&nbsp;Submit an Abstract</i><br>
-                        <i class="fa fa-check">&nbsp;&nbsp;Register your Team</i><br>
-                        <i class="fa fa-check">&nbsp;&nbsp;Get notified that your project is accepted by 15th April</i><br>
-                        <i class="fa fa-check">&nbsp;&nbsp;Know your mentor on 17th April
+                        <i class="fa fa-check">&nbsp;&nbsp;Submit an Abstract latest by 31st March</i><br>
+                        <i class="fa fa-check">&nbsp;&nbsp;Get notified that your project is accepted by 4th April</i><br>
+                        <i class="fa fa-check">&nbsp;&nbsp;Know your mentor by 12th April
                         </i><br>
                         <i class="fa fa-check">&nbsp;&nbsp;Start your projects</i></p>
+                        <i class="fa fa-check">&nbsp;&nbsp;Make your dream come true</i></p>
 			</div>
 			<div class="col-sm-6">
 				<h2 class="text-center top-space">Call for Mentors</h2>
@@ -115,7 +115,7 @@
 				 <i class="fa fa-check-circle-o">&nbsp;&nbsp;We will most definitely certify the help you have provided.</i><br>
 				<i class="fa fa-check-circle-o">&nbsp;&nbsp;Your words will influence a batch of freshmen who are the future of the IIT Bombay Tech Scene.</i> <br>
 				<h4>We plan to assign one ITSP Mentor for every 2 teams. You can be both on campus or off campus during the summer for being a part of this program. Though on campus mentors would be preferred.</h4>
-				            <a href="https://billa.typeform.com/to/iR9cbK">Register here</a></p>
+				            <a target=_blank href="https://docs.google.com/forms/d/1tCOUJjX_LSm-igWgP4wh7v2WT540UdYqaYdLeHatYLY/viewform" style="" title="Register for mentorship">Register here</a></p>
 			</div>
 		</div> <!-- /row -->
 

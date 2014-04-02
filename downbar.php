@@ -45,11 +45,19 @@
 					<div class="col-md-6 widget">
 						<div class="widget-body">
 							<p class="simplenav">
-								<a href="#">Home</a> | 
+								<a href="index.php">Home</a> | 
 								<a href="about.php">About</a> |
-								<a href="sidebar-right.php">Timeline</a> |
-								<a href="contact.php">Archive</a> |
-								<b><a href="signup.php">FAQs</a></b>
+								<a href="timeline.php">Timeline</a> |
+								<a href="archive.php">Archive</a> |
+								<a href="FAQ.php">FAQs</a> |
+								<a href="projects.php">Projects</a> |
+								<?php
+								session_start();
+								if(isset($_SESSION['id'])||isset($_SESSION['outsider']))
+								echo '<a href="php/logout.php">Logout</a>';
+								else
+								echo '<a href="signin.php">Login</a>';
+								?>
 							</p>
 						</div>
 					</div>

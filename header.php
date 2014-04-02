@@ -2,9 +2,24 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<meta name="viewport"    content="width=device-width, initial-scale=1.0">
-	<meta name="description" content="Website for ITSP 2014">
-	<meta name="author"      content="Prateek Chandan">
+	<meta name="title" content="ITSP-Institute Technical Summer Projects , STAB , IIT Bombay">
+	<meta name="description" content="ITSP Institute Technical summer projects organised by the STAB,Student Technical Activities Body,IITB creates an environment for students at IITB, to design,build,develop and code amazing projects in the Summer.">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="Keywords" content="STAB , ITSP , Technical Project, Summer Project, IITB, Prateek">
+    <meta name="author" content="Prateek Chandan">
+	<link rel="author" href="https://plus.google.com/+PrateekChandan"/>
+	<meta property="og:title" content="ITSP-Institute Technical Summer Projects , STAB , IIT Bombay"/>
+	<meta property="og:site_name" content="ITSP 2014 ,STAB , IIT Bombay"/>
+	<meta property="og:type" content="article"/>
+	<meta property="og:image" content="http://itsp.stab-iitb.org/assets/images/fb.png"/>
+	<meta property="og:url" content="http://itsp.stab-iitb.org"/>
+	<meta property="og:description" content="ITSP Institute Technical summer projects organised by the STAB,Student Technical Activities Body,IITB creates an environment for students at IITB, to design,build,develop and code amazing projects in the Summer."/>
+	<meta property="article:author" content="https://www.facebook.com/prateekchandan5545" />
+	<meta property="article:publisher" content="https://www.facebook.com/stab.iitb" />
+	<meta itemprop="name" content="ITSP-Institute Technical Summer Projects , STAB , IIT Bombay">
+    <meta itemprop="description" content="ITSP Institute Technical summer projects organised by the STAB,Student Technical Activities Body,IITB creates an environment for students at IITB, to design,build,develop and code amazing projects in the Summer.">
+	<meta property="fb:admins" content="prateekchandan5545"/>
 	
 	<title>ITSP 2014</title>
 

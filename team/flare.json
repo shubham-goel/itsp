@@ -1,0 +1,157 @@
+{
+ "name": "STAB IIT Bombay",
+ "children": [
+  {
+   "name": "Robotics Club",
+   "children": [
+    {
+     "name": "Manager name 1",
+     "children": [
+      {"name": "convener1", "size": 3938},
+      {"name": "convener2", "size": 3812},
+      {"name": "convener 3", "size": 6714},
+      {"name": "convener4", "size": 743}
+     ]
+    },
+    {
+     "name": "Manager name 2",
+     "children": [
+      {"name": "convener1", "size": 3938},
+      {"name": "convener2", "size": 3812},
+      {"name": "convener 3", "size": 6714},
+      {"name": "convener4", "size": 743}
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Aeromodelling Club",
+   "children": [
+    {
+     "name": "Manager name 1",
+     "children": [
+      {"name": "convener1", "size": 3938},
+      {"name": "convener2", "size": 3812},
+      {"name": "convener 3", "size": 6714},
+      {"name": "convener4", "size": 743}
+     ]
+    },
+    {
+     "name": "Manager name 2",
+     "children": [
+      {"name": "convener1", "size": 3938},
+      {"name": "convener2", "size": 3812},
+      {"name": "convener 3", "size": 6714},
+      {"name": "convener4", "size": 743}
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Web and Coding Club",
+   "children": [
+    {
+     "name": "Manager name 1",
+     "children": [
+      {"name": "convener1", "size": 3938},
+      {"name": "convener2", "size": 3812},
+      {"name": "convener 3", "size": 6714},
+      {"name": "convener4", "size": 743}
+     ]
+    },
+    {
+     "name": "Manager name 2",
+     "children": [
+      {"name": "convener1", "size": 3938},
+      {"name": "convener2", "size": 3812},
+      {"name": "convener 3", "size": 6714},
+      {"name": "convener4", "size": 743}
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Maths and Physics Club",
+   "children": [
+    {
+     "name": "Manager name 1",
+     "children": [
+      {"name": "convener1", "size": 3938},
+      {"name": "convener2", "size": 3812},
+      {"name": "convener 3", "size": 6714},
+      {"name": "convener4", "size": 743}
+     ]
+    },
+    {
+     "name": "Manager name 2",
+     "children": [
+      {"name": "convener1", "size": 3938},
+      {"name": "convener2", "size": 3812},
+      {"name": "convener 3", "size": 6714},
+      {"name": "convener4", "size": 743}
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Krittika - Astronomy Club",
+   "children": [
+    {
+     "name": "Manager name 1",
+     "children": [
+      {"name": "convener1", "size": 3938},
+      {"name": "convener2", "size": 3812},
+      {"name": "convener 3", "size": 6714},
+      {"name": "convener4", "size": 743}
+     ]
+    },
+    {
+     "name": "Manager name 2",
+     "children": [
+      {"name": "convener1", "size": 3938},
+      {"name": "convener2", "size": 3812},
+      {"name": "convener 3", "size": 6714},
+      {"name": "convener4", "size": 743}
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Electronics Club",
+   "children": [
+    {
+     "name": "Manager name 1",
+     "children": [
+      {"name": "convener1", "size": 3938},
+      {"name": "convener2", "size": 3812},
+      {"name": "convener 3", "size": 6714},
+      {"name": "convener4", "size": 743}
+     ]
+    },
+    {
+     "name": "Manager name 2",
+     "children": [
+      {"name": "convener1", "size": 3938},
+      {"name": "convener2", "size": 3812},
+      {"name": "convener 3", "size": 6714},
+      {"name": "convener4", "size": 743}
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Web Department",
+   "children": [
+    {
+     "name": "Manager name 1",
+     "children": [
+      {"name": "convener1", "size": 3938},
+      {"name": "convener2", "size": 3812},
+      {"name": "convener 3", "size": 6714},
+      {"name": "convener4", "size": 743}
+     ]
+    }
+   ]
+  }
+ ]
+}
