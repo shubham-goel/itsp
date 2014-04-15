@@ -1,7 +1,7 @@
 <?php
 session_start();
 if(isset($_SESSION['id']))
-	header("Location:http://itsp.stab-iitb.org");
+	header("Location:http://itsp.stab-iitb.org/projects.php");
 include "php/dbconnect.php";
 if(isset($_POST['login-email']))
 {
@@ -19,7 +19,7 @@ $hash=trim(shell_exec('python user.py '.$a.' '.$salt));
 if($hash == $p)
 {
 	$_SESSION['id']=$data['id'];
-	header("Location:http://itsp.stab-iitb.org");
+	header("Location:http://itsp.stab-iitb.org/projects.php");
 }
 }
 ?>

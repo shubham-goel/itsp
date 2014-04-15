@@ -84,335 +84,21 @@ if(isset($_SESSION['outsider'])){
 				<header class="page-header">
 					<h1 class="page-title">Project Registration</h1>
 				</header>';
-				if(1){
-				echo '<div class="col-md-6">
-					<div class="panel panel-default">
-						<div class="panel-body">
-							<h3 class="thin text-center">Register your project</h3>
-							<div class="text-center text-muted"><b>Instructions</b></div>				
-							<div class="text-center text-muted">1. This is a one-time registration so fill in up all details very carefully</div>
-							<div class="text-center text-muted">2. The project description should describe your project consicely in one-two lines</div>
-							<div class="text-center text-muted">3. It is mandatory for atleast one team member which should be you</div>
-
-
-							<hr>
-							<div class="alert alert-danger alert-dismissable" style="display:none" id="reg-alert">
-						        <button type="button" class="close"onclick="$(\'#reg-alert\').css(\'display\',\'none\')">×</button>
-						        <div id="reg-alert-text">Please signup to get an user account</div>
-						    </div>
-							<form id="reg-form">
-								<input type="hidden" name="by" value='.$user.'>
-								<div class="top-margin">
-									<label>Team Name<span class="text-danger">*</span></label>
-									<input type="text" class="form-control" id="team_name" name="team_name" required>
-								</div>
-								<div class="top-margin">
-									<label>Project Name<span class="text-danger">*</span></label>
-									<input type="text" class="form-control" id="project_name" name="project_name" required>
-								</div>
-								<div class="top-margin">
-									<label>Project Short Description(max 500 chars)</label>
-									<input type="text" class="form-control" id="project_desc" name="project_desc">
-								</div>
-								<div class="top-margin">
-									<label>Select the club</label>
-									<select class="form-control" id="club" name="club">
-									<option>WnCC</option>
-									<option>MnP club</option>
-									<option>Electronics and Robotics Club</option>
-									<option>Aeromodelling Club</option>
-									<option>Krittika</option>
-									</select>
-								</div>
-								<div class="top-margin">
-									<label>Slot Preference</label>
-									<input type="radio" checked="checked" autocomplete="off" name="slot" value="1">Slot1 (5th May-16th June)
-									<input type="radio" name="slot" autocomplete="off" value="2">Slot2 (15th May-10th June)
-								</div>
-								<label>Team Members Description</label>
-								<button type="button" class="btn btn-member col-md-12" onclick="$(\'#member1\').slideToggle()">Team Member 1 Details<span class="text-danger">*</span></button>
-								<div class="row" id="member1" style="display:none">
-									<div class="col-md-12">
-										<label>Name<span class="text-danger">*</span></label>
-										<input class="form-control" type="text" id="t1_name" name="t1_name" value="'.$name.'">
-									</div>
-									<div class="col-md-12">
-										<label>Roll<span class="text-danger">*</span></label>
-										<input class="form-control" type="text" id="t1_roll" value="'.$roll.'" name="t1_roll">
-									</div>
-									<div class="col-md-12">
-										<label>Email<span class="text-danger">*</span></label>
-										<input class="form-control" type="email" id="t1_email" value="'.$userdata['email'].'" name="t1_email">
-									</div>
-									<div class="col-md-12">
-										<label>Contact<span class="text-danger">*</span></label>
-										<input class="form-control" type="text" id="t1_contact" value="'.$userdata['mobile'].'" name="t1_contact">
-									</div>
-									<div class="col-md-12">
-										<label>Hostel/Roomno eg:h9/178<span class="text-danger">*</span></label>
-										<input class="form-control" type="text" id="t1_hostel" name="t1_hostel" value="h'.$userdata['hostel_id'].'/'.$userdata['room'].'">
-									</div>
-								</div>
-								<button type="button" class="btn btn-member col-md-12" onclick="$(\'#member2\').slideToggle()">Team Member 2 Details</button>
-								<div class="row" id="member2" style="display:none">
-									<div class="col-md-12">
-										<label>Name</label>
-										<input class="form-control" type="text" id="t2_name" name="t2_name">
-									</div>
-									<div class="col-md-12">
-										<label>Roll</label>
-										<input class="form-control" type="text" id="t2_roll" name="t2_roll" >
-									</div>
-									<div class="col-md-12">
-										<label>Email</label>
-										<input class="form-control" type="email" id="t2_email" name="t2_email">
-									</div>
-									<div class="col-md-12">
-										<label>Contact</label>
-										<input class="form-control" type="text" id="t2_contact" name="t2_contact">
-									</div>
-									<div class="col-md-12">
-										<label>Hostel/Roomno eg:h9/178</label>
-										<input class="form-control" type="text" id="t2_hostel" name="t2_hostel">
-									</div>
-								</div>
-								<button type="button" class="btn btn-member col-md-12" onclick="$(\'#member3\').slideToggle()">Team Member 3 Details</button>
-								<div class="row" id="member3" style="display:none">
-									<div class="col-md-12">
-										<label>Name</label>
-										<input class="form-control" type="text" id="t3_name" name="t3_name">
-									</div>
-									<div class="col-md-12">
-										<label>Roll</label>
-										<input class="form-control" type="text" id="t3_roll" name="t3_roll" >
-									</div>
-									<div class="col-md-12">
-										<label>Email</label>
-										<input class="form-control" type="email" id="t3_email" name="t3_email">
-									</div>
-									<div class="col-md-12">
-										<label>Contact</label>
-										<input class="form-control" type="text" id="t3_contact" name="t3_contact">
-									</div>
-									<div class="col-md-12">
-										<label>Hostel/Roomno eg:h9/178</label>
-										<input class="form-control" type="text" id="t3_hostel" name="t3_hostel">
-									</div>
-								</div>
-								<button type="button" class="btn btn-member col-md-12" onclick="$(\'#member4\').slideToggle()">Team Member 4 Details</button>
-								<div class="row" id="member4" style="display:none">
-									<div class="col-md-12">
-										<label>Name</label>
-										<input class="form-control" type="text" id="t4_name" name="t4_name">
-									</div>
-									<div class="col-md-12">
-										<label>Roll</label>
-										<input class="form-control" type="text" id="t4_roll" name="t4_roll" >
-									</div>
-									<div class="col-md-12">
-										<label>Email</label>
-										<input class="form-control" type="email" id="t4_email" name="t4_email">
-									</div>
-									<div class="col-md-12">
-										<label>Contact</label>
-										<input class="form-control" type="text" id="t4_contact" name="t4_contact">
-									</div>
-									<div class="col-md-12">
-										<label>Hostel/Roomno eg:h9/178</label>
-										<input class="form-control" type="text" id="t4_hostel"  name="t4_hostel" >
-									</div>
-								</div>
 
 				
-
-								<hr>
-
-								<div class="row">
-									<div class="col-lg-4 col-lg-offset-8 text-right">
-										<button class="btn btn-action" type="submit">Register</button>
-									</div>
-								</div>
-							</form>
-						</div>
-					</div>
-
-				</div>
-				<div class="col-md-6">
-					<div class="panel panel-default">
-						<div class="panel-body">
-							<h3 class="thin text-center">Register for one of the UMIC Projects</h3>
-							<div class="text-center text-muted"> <b>Instructions:</b></div>
-							<div class="text-center text-muted">1. You could either register in ITSP or only <b>One</b> of the UMIC Projects</div>
-							<div class="text-center text-muted">2. You will be working with well-established Project teams adequately</div>
-							<div class="text-center text-muted">3. Project duration is <b>2 months</b></div>
-							<div class="text-center text-muted">4. Rigorous Mentoring, team meets and task allotment on daily basis</div>
-							<div class="text-center text-muted">5. Project will be highly Oriented towards product Development(High scalability,Patenting and Finished Prototypes)</div>
-							<div class="text-center text-muted">6. The project wil have high deliverables, thus, <b>long hours of hard work and steep learning curves</b>, it will be like 2 month long Hackathon</div>
-							<br>
-							<div class="text-center text-muted"> For further details contact<br>Arpit gupta &nbsp;09920134740<br>Pranjal Jain &nbsp;09820718025<br>
-							or visit <a href="http://www.umic-iitb.org/" target=_blank>UMIC WEBSITE</a></div>
-
-							<hr>
-							<div class="alert alert-danger alert-dismissable" style="display:none" id="regu-alert">
-						        <button type="button" class="close"onclick="$(\'#regu-alert\').css(\'display\',\'none\')">×</button>
-						        <div id="regu-alert-text"></div>
-						    </div>
-							<form id="regu-form">
-								<input type="hidden" name="by" value='.$user.'>
-								<input type="hidden" name="umic" value="true">
-								<input type="hidden" name="club" value="umic">
-								<input type="hidden" name="project_desc" value="UMIC Project">
-								<div class="row" id="member1">
-									<div class="col-md-12">
-										<label>Name<span class="text-danger">*</span></label>
-										<input class="form-control" type="text" id="t1_nameu" name="t1_name" value="'.$name.'">
-									</div>
-									<div class="col-md-12">
-										<label>Roll<span class="text-danger">*</span></label>
-										<input class="form-control" type="text" id="t1_rollu" value="'.$roll.'" name="t1_roll">
-									</div>
-									<div class="col-md-12">
-										<label>Email<span class="text-danger">*</span></label>
-										<input class="form-control" type="email" id="t1_emailu" value="'.$userdata['email'].'" name="t1_email">
-									</div>
-									<div class="col-md-12">
-										<label>Contact<span class="text-danger">*</span></label>
-										<input class="form-control" type="text" id="t1_contactu" value="'.$userdata['mobile'].'" name="t1_contact">
-									</div>
-									<div class="col-md-12">
-										<label>Hostel/Roomno eg:h9/178<span class="text-danger">*</span></label>
-										<input class="form-control" type="text" id="t1_hostelu" name="t1_hostel" value="h'.$userdata['hostel_id'].'/'.$userdata['room'].'">
-									</div>
-								</div>
-								<div class="row">
-								<hr>
-									<h4> Select one of the UMIC projects to register</h4>
-									<div class="col-md-12">
-										<input type="radio" name="project_name" class="umi" value="Snake Robot">
-										<label>Snake Robot</label>
-										<p>Snakes have the ability to handle rugged terrains and manoeuvre through natural obstacles easily</p>
-									</div>
-									<div class="col-md-12">
-										<input type="radio" name="project_name" class="umi" value="Indoor Navigation and Mapping">
-										<label>Indoor Navigation and Mapping</label>
-										<p>Is an indoor navigable office robot, primary aim is to automate the way things move in the office</p>
-									</div>
-									<div class="col-md-12">
-										<input type="radio" name="project_name" class="umi" value="Autonomous All Terrain Vehicle">
-										<label>Autonomous All Terrain Vehicle</label>
-										<p>Autonomous Off terrain navigation has been a challenge, developing robots that are able to manoeuver through rocky and off terrains is the target</p>
-									</div>
-									<div class="col-md-12">
-										<input type="radio" name="project_name" class="umi" value="Lighter Than Air Unmanned Aerial Vehicle">
-										<label>Lighter Than Air Unmanned Aerial Vehicle</label>
-										<p>Converting the traditional UAV\'s into a lighter than air vehicle increases the flight time upto 10 times thus extending their power to stay airborne</p>
-									</div>
-									<div class="col-md-12">
-										<input type="radio" name="project_name"class="umi"  value="Stereovision : Obstacle Detection using 3-D Camera">
-										<label>Stereovision : Obstacle Detection using 3-D Camera</label>
-										<p>Environment Mapping and Navigation using stereovision for off terrain applications(like trekking a rocky hill)</p>
-									</div>
-									<div class="col-md-12">
-										<input type="radio" name="project_name"class="umi"  value="Driving an Autonomous Vehicle using Image Processing">
-										<label>Driving an Autonomous Vehicle using Image Processing</label>
-										<p>Obstacle and lane detection using Image processing and making a bot move in the specified lane and on a particular heading</p>
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-lg-4 col-lg-offset-8 text-right">
-										<button class="btn btn-action" type="submit">Register</button>
-									</div>
-								</div>
-								
-							</form>
-						</div>
-					</div>
-				</div>';
-			}
-			/*	echo '<div class="col-md-6 col-md-offset-3">
+			
+				echo '<div class="col-md-6 col-md-offset-3">
 					<div class="panel panel-default">
 						<div class="panel-body">
 						<h1>The registration is closed</h1>
-						<blockquote>If you still want to register you can send a mail to itsp2014.stab@gmail.com<br>We will try to consider you</blockquote>
+						
 						</div>
 					</div>
-				</div>';*/
+				</div>';
 			echo '
 			
 			</article>
-			<!-- /Article -->
-			<script type="text/javascript">
-	$("#reg-form").submit(function(e) {
-		var a=0;
-		if($("#t1_name").val()==""||$("#t1_roll").val()==""||$("#t1_email").val()==""||$("#t1_contact").val()==""||$("#t1_hostel").val()=="")
-		{
-			$("#reg-alert-text").html("Fill Team member1 details completely");
-			$("#reg-alert").css("display","block");
-			return false;
-		}
-		data=$(this).serialize();
-		jQuery.ajax({
-			url:"php/regproject.php",
-			data:data,
-			type:"POST",
-			success:function(data){
-			console.log(data);
-				if(data.trim()=="done")
-				{
-					$(".panel-body").html("<h1><i class=\'fa fa-check\'></i> Form successfully submitted</h1>");
-				}
-				else
-				{
-					$("#reg-alert-text").html("Some error occured while submittin the project");
-					$("#reg-alert").css("display","block");
-				}
-			},
-			error:function(){
-				alert("Error connecting");
-			}
-		})
-		return false;
-	});
-$("#regu-form").submit(function(e) {
-		var a=0;
-		if($("#t1_nameu").val()==""||$("#t1_rollu").val()==""||$("#t1_emailu").val()==""||$("#t1_contactu").val()==""||$("#t1_hostelu").val()=="")
-		{
-			$("#regu-alert-text").html("Fill Team member1 details completely");
-			$("#regu-alert").css("display","block");
-			return false;
-		}
-		if ($(".umi:checked").size() <= 0)
-			{
-			$("#regu-alert-text").html("Select atleast one project");
-			$("#regu-alert").css("display","block");
-			return false;
-		}
-		data=$(this).serialize();
-		jQuery.ajax({
-			url:"php/regproject.php",
-			data:data,
-			type:"POST",
-			success:function(data){
-			console.log(data);
-				if(data.trim()=="done")
-				{
-					$(".panel-body").html("<h1><i class=\'fa fa-check\'></i> Form successfully submitted</h1>");
-				}
-				else
-				{
-					$("#regu-alert-text").html("Some error occured while submittin the project");
-					$("#regu-alert").css("display","block");
-				}
-			},
-			error:function(){
-				alert("Error connecting");
-			}
-		})
-		return false;
-	});
-
-</script>
-			';
+	';
 		}else if($userchk==-1)
 		{
 			echo '
@@ -450,6 +136,13 @@ $("#regu-form").submit(function(e) {
 										echo '<li>'.$project['t4_name'].'</li>';
 										echo '</ul>
 								</div>';
+								echo '<hr>';
+							echo '<b>Comments from Mentors:</b>';							
+							echo "<br>".$project['mc1']."";
+							echo "<br>".$project['mc2']."";
+							echo "<br>".$project['mc3']."";
+							echo "<br>".$project['mc4']."";
+							echo "<br>".$project['mc5']."";
 								echo '<hr>';
 						if($project['acceptedby']==""||$project['acceptedby']=="0"){
 								if($project['club']!="umic")
@@ -549,142 +242,7 @@ $("#regu-form").submit(function(e) {
 				
 				<div class="col-md-6 col-md-offset-3">
 					<div class="panel panel-default">
-						<div class="panel-body">
-							<h3 class="thin text-center">Register your project</h3>
-							<div class="text-center text-muted"><b>Instructions</b></div>				
-							<div class="text-center text-muted">1. This is a one-time registration so fill in up all details very carefully</div>
-							<div class="text-center text-muted">2. The project description should describe your project consicely in one-two lines</div>
-							<div class="text-center text-muted">3. It is mandatory for atleast one team member which should be you</div>
-
-
-							<hr>
-							<div class="alert alert-danger alert-dismissable" style="display:none" id="reg-alert">
-						        <button type="button" class="close"onclick="$(\'#reg-alert\').css(\'display\',\'none\')">×</button>
-						        <div id="reg-alert-text">Please signup to get an user account</div>
-						    </div>
-							<form id="reg-form">
-								<input type="hidden" name="by" value='.$outsider.'>
-								<div class="top-margin">
-									<label>Team Name<span class="text-danger">*</span></label>
-									<input type="text" class="form-control" id="team_name" name="team_name" required>
-								</div>
-								<div class="top-margin">
-									<label>Project Name<span class="text-danger">*</span></label>
-									<input type="text" class="form-control" id="project_name" name="project_name" required>
-								</div>
-								<div class="top-margin">
-									<label>Project Short Description(max 500 chars)</label>
-									<input type="text" class="form-control" id="project_desc" name="project_desc">
-								</div>
-								<div class="top-margin">
-									<label>Select the club</label>
-									<select class="form-control" id="club" name="club">
-									<option>WnCC</option>
-									<option>MnP club</option>
-									<option>Electronics and Robotics Club</option>
-									<option>Aeromodelling Club</option>
-									<option>Krittika</option>
-									</select>
-								</div>
-								
-									<input type="hidden"  name="slot" value="1">
-								
-								
-								<label>Team Members Description</label>
-								<button type="button" class="btn btn-member col-md-12" onclick="$(\'#member1\').slideToggle()">Team Member 1 Details<span class="text-danger">*</span></button>
-								<div class="row" id="member1">
-									<div class="col-md-12">
-										<label>Name<span class="text-danger">*</span></label>
-										<input class="form-control" type="text" id="t1_name" name="t1_name" value="'.$name.'">
-									</div>
-	
-										<input class="form-control" type="hidden" id="t1_roll" value="outsider" name="t1_roll" >
-									
-									<div class="col-md-12">
-										<label>Email<span class="text-danger">*</span></label>
-										<input class="form-control" type="email" id="t1_email" name="t1_email" value="'.$userdata['email'].'" required>
-									</div>
-									<div class="col-md-12">
-										<label>Contact<span class="text-danger">*</span></label>
-										<input class="form-control" type="text" id="t1_contact"  name="t1_contact" value="'.$userdata['contact'].'" required>';
-									echo'</div>
-									<div class="col-md-12">
-										<label>College/Year<span class="text-danger">*</span></label>
-										<input class="form-control" type="text" id="t1_hostel" name="t1_hostel" value="'.$userdata['college'].'/ Year:'.$userdata['year'].'" required>
-									</div>
-								</div>
-								<button type="button" class="btn btn-member col-md-12" onclick="$(\'#member2\').slideToggle()">Team Member 2 Details</button>
-								<div class="row" id="member2" style="display:none">
-									<div class="col-md-12">
-										<label>Name</label>
-										<input class="form-control" type="text" id="t2_name" name="t2_name">
-									</div>
-									<input class="form-control" type="hidden" id="t2_roll" value="0" name="t3_roll">
-									<div class="col-md-12">
-										<label>Email</label>
-										<input class="form-control" type="email" id="t2_email" name="t2_email">
-									</div>
-									<div class="col-md-12">
-										<label>Contact</label>
-										<input class="form-control" type="text" id="t2_contact" name="t2_contact">
-									</div>
-									<div class="col-md-12">
-										<label>College/Year</label>
-										<input class="form-control" type="text" id="t2_hostel" name="t2_hostel">
-									</div>
-								</div>
-								<button type="button" class="btn btn-member col-md-12" onclick="$(\'#member3\').slideToggle()">Team Member 3 Details</button>
-								<div class="row" id="member3" style="display:none">
-									<div class="col-md-12">
-										<label>Name</label>
-										<input class="form-control" type="text" id="t3_name" name="t3_name">
-									</div>
-									<input class="form-control" type="hidden" id="t3_roll" value="0" name="t2_roll">
-									<div class="col-md-12">
-										<label>Email</label>
-										<input class="form-control" type="email" id="t3_email" name="t3_email">
-									</div>
-									<div class="col-md-12">
-										<label>Contact</label>
-										<input class="form-control" type="text" id="t3_contact" name="t3_contact">
-									</div>
-									<div class="col-md-12">
-										<label>College/Year</label>
-										<input class="form-control" type="text" id="t3_hostel" name="t3_hostel">
-									</div>
-								</div>
-								<button type="button" class="btn btn-member col-md-12" onclick="$(\'#member4\').slideToggle()">Team Member 4 Details</button>
-								<div class="row" id="member4" style="display:none">
-									<div class="col-md-12">
-										<label>Name</label>
-										<input class="form-control" type="text" id="t4_name" name="t4_name">
-									</div>
-									<input class="form-control" type="hidden" id="t4_roll" value="0" name="t4_roll">
-									<div class="col-md-12">
-										<label>Email</label>
-										<input class="form-control" type="email" id="t4_email" name="t4_email">
-									</div>
-									<div class="col-md-12">
-										<label>Contact</label>
-										<input class="form-control" type="text" id="t4_contact" name="t4_contact">
-									</div>
-									<div class="col-md-12">
-										<label>College/Year</label>
-										<input class="form-control" type="text" id="t4_hostel"  name="t4_hostel" >
-									</div>
-								</div>
-
-				
-
-								<hr>
-
-								<div class="row">
-									<div class="col-lg-4 col-lg-offset-8 text-right">
-										<button class="btn btn-action" type="submit">Register</button>
-									</div>
-								</div>
-							</form>
-						</div>
+						<h1>Resgistration is closed</h1>
 					</div>
 
 				</div>
@@ -790,7 +348,13 @@ $("#regu-form").submit(function(e) {
 									<button class="btn btn-success" style="margin-top:10px;padding-bottom:5px;padding-top:5px;">Submit</button>
 								</div>
 								</form>';
-							
+							echo '<hr>';
+							echo '<b>Comments from Mentors:</b>';							
+							echo "<br>".$project['mc1']."";
+							echo "<br>".$project['mc2']."";
+							echo "<br>".$project['mc3']."";
+							echo "<br>".$project['mc4']."";
+							echo "<br>".$project['mc5']."";
 						echo	'
 						<hr>';
 						

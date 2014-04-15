@@ -6,11 +6,13 @@
 					
 					<div class="col-md-3 widget">
 						<h3 class="widget-title">Contact</h3>
-						<div class="widget-body">
-							<!--p>+234 23 9873237<br-->
-								<a href="mailto:rahul.prajapat9@gmail.com">rahul.prajapat9@gmail.com</a><br>
+						<div class="widget-body">							
+								<a href="mailto:rahul.prajapat9@gmail.com">rahul.prajapat9@gmail.com</a>
 								<br>
 								Overall Coordinator , STAB
+								<br><br>
+								Official Email id :
+								<a href="mailto:itsp2014.stab@gmail.com">itsp2014.stab@gmail.com</a><br>
 							</p>	
 						</div>
 					</div>
