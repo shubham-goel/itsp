@@ -87,6 +87,7 @@ if($user=='manager')
 						<thead>
 							<tr>
 							<th>Sl no</th>
+							<th>Team id</th>
 							<th>
 								Team Name
 							</th>
@@ -153,6 +154,7 @@ if($user=='manager')
 							{
 								echo "<tr>";
 								echo "<td>".$i."</td>";
+								echo "<td>".$row['team_id']."</td>";
 								$i+=1;
 								echo "<td>".$row['team_name']."</td>";
 								echo "<td title='".$row['project_desc']."''>".$row['project_name']."</td>";
@@ -270,9 +272,6 @@ if($user=='manager')
 									}								
 								}	
 								else{	
-									echo "<td><div class='comment'>".$row['mentor1']."</div></td>";
-									echo "<td><div class='comment'>".$row['mentor2']."</div></td>";
-									echo "<td><div class='comment'>".$row['mentor3']."</div></td>";
 
 									echo "<td><div class='comment'>".$row['mc1']."</div></td>";
 									echo "<td><div class='comment'>".$row['mc2']."</div></td>";
@@ -291,6 +290,9 @@ if($user=='manager')
 						<thead>
 							<tr>
 							<th>Sl no</th>
+							<th>
+								Team id
+							</th>
 							<th>
 								Team Name
 							</th>
@@ -357,6 +359,7 @@ echo '<th>
 							{
 								echo "<tr>";
 								echo "<td>".$i."</td>";
+								echo "<td>".$row['team_id']."</td>";
 								$i+=1;
 								echo "<td>".$row['team_name']."</td>";
 								echo "<td title='".$row['project_desc']."''>".$row['project_name']."</td>";
@@ -494,6 +497,9 @@ echo '<th>
 							<tr>
 							<th>Sl no</th>
 							<th>
+								Team id
+							</th>
+							<th>
 								Team Name
 							</th>
 							<th>
@@ -559,6 +565,7 @@ echo '<th>
 							{
 								echo "<tr>";
 								echo "<td>".$i."</td>";
+								echo "<td>".$row['team_id']."</td>";
 								$i+=1;
 								echo "<td>".$row['team_name']."</td>";
 								echo "<td title='".$row['project_desc']."''>".$row['project_name']."</td>";
@@ -695,6 +702,9 @@ echo '<th>
 							<tr>
 							<th>Sl no</th>
 							<th>
+								Team id
+							</th>
+							<th>
 								Team Name
 							</th>
 							<th>
@@ -759,6 +769,7 @@ echo '<th>
 							{
 								echo "<tr>";
 								echo "<td>".$i."</td>";
+								echo "<td>".$row['team_id']."</td>";
 								$i+=1;
 								echo "<td>".$row['team_name']."</td>";
 								echo "<td title='".$row['project_desc']."''>".$row['project_name']."</td>";
@@ -898,6 +909,9 @@ echo '<th>
 							<tr>
 							<th>Sl no</th>
 							<th>
+								Team id
+							</th>
+							<th>
 								Team Name
 							</th>
 							<th>
@@ -962,6 +976,7 @@ echo '<th>
 							{
 								echo "<tr>";
 								echo "<td>".$i."</td>";
+								echo "<td>".$row['team_id']."</td>";
 								$i+=1;
 								echo "<td>".$row['team_name']."</td>";
 								echo "<td title='".$row['project_desc']."''>".$row['project_name']."</td>";
@@ -1097,6 +1112,7 @@ echo '<th>
 						<thead>
 							<tr>
 							<th>Sl no</th>
+							<th>Team id</th>
 							<th>
 								Team Name
 							</th>
@@ -1162,6 +1178,7 @@ echo '<th>
 							{
 								echo "<tr>";
 								echo "<td>".$i."</td>";
+								echo "<td>".$row['team_id']."</td>";
 								$i+=1;
 								echo "<td>".$row['team_name']."</td>";
 								echo "<td title='".$row['project_desc']."''>".$row['project_name']."</td>";

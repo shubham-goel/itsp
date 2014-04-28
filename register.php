@@ -110,6 +110,7 @@ if(isset($_SESSION['outsider'])){
 					<div class="panel panel-default">
 						<div class="panel-body">
 							<h3 class="thin text-center">'.$project['project_name'].'</h3>
+							<h5 class="thin text-center"><b>Team id:</b> '.$project['team_id'].'</h5>
 							<p class="text-center text-muted">'.$project['project_desc'].'</p>
 							<hr>
 
@@ -179,7 +180,7 @@ if(isset($_SESSION['outsider'])){
 
 						}
 						else
-							echo "<div ><b>Congrats! Your project i accepted for ITSP 2014</b></div>";
+							echo "<div ><b>Congrats! Your project is accepted for ITSP 2014</b></div>";
 						echo '</div>
 						</div>
 					</div>
@@ -364,7 +365,7 @@ if(isset($_SESSION['outsider'])){
 						</form>';
 					}
 						else
-							echo "<div ><b>Congrats! Your project i accepted for ITSP 2014</b></div>";
+							echo "<div ><b>Congrats! Your project is accepted for ITSP 2014</b></div>";
 						
 					echo'	</div>
 						</div>
