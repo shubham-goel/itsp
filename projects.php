@@ -31,6 +31,9 @@ if($user=='manager')
 		font-size: 13px;
 		min-width: 200px;
 	}
+	.btn-danger{
+		padding: 6px 12px
+	}
 </style>
 	<div class="navbar navbar-inverse navbar-fixed-top headroom" >
 		<div class="container">
@@ -236,7 +239,11 @@ if($user=='manager')
 
 										}
 										else{
-											echo "<td><div class='comment'>".$row[$key]."</div></td>";
+											echo "<td><div class='comment'>".$row[$key]."</div>";
+											if($manager){
+												echo '<button class="btn btn-danger" onclick="removementor(\''.$row['by'].'\',\''.$key.'\')">Delete</button>';
+											}
+											echo "</td>";
 										}
 									}
 									$mc=array('mc1','mc2','mc3','mc4','mc5');
@@ -442,7 +449,11 @@ echo '<th>
 
 										}
 										else{
-											echo "<td><div class='comment'>".$row[$key]."</div></td>";
+											echo "<td><div class='comment'>".$row[$key]."</div>";
+											if($manager){
+												echo '<button class="btn btn-danger" onclick="removementor(\''.$row['by'].'\',\''.$key.'\')">Delete</button>';
+											}
+											echo "</td>";
 										}
 									}
 									$mc=array('mc1','mc2','mc3','mc4','mc5');
@@ -647,7 +658,11 @@ echo '<th>
 
 										}
 										else{
-											echo "<td><div class='comment'>".$row[$key]."</div></td>";
+											echo "<td><div class='comment'>".$row[$key]."</div>";
+											if($manager){
+												echo '<button class="btn btn-danger" onclick="removementor(\''.$row['by'].'\',\''.$key.'\')">Delete</button>';
+											}
+											echo "</td>";
 										}
 									}
 									$mc=array('mc1','mc2','mc3','mc4','mc5');
@@ -851,7 +866,11 @@ echo '<th>
 
 										}
 										else{
-											echo "<td><div class='comment'>".$row[$key]."</div></td>";
+											echo "<td><div class='comment'>".$row[$key]."</div>";
+											if($manager){
+												echo '<button class="btn btn-danger" onclick="removementor(\''.$row['by'].'\',\''.$key.'\')">Delete</button>';
+											}
+											echo "</td>";
 										}
 									}
 									$mc=array('mc1','mc2','mc3','mc4','mc5');
@@ -1058,7 +1077,11 @@ echo '<th>
 
 										}
 										else{
-											echo "<td><div class='comment'>".$row[$key]."</div></td>";
+											echo "<td><div class='comment'>".$row[$key]."</div>";
+											if($manager){
+												echo '<button class="btn btn-danger" onclick="removementor(\''.$row['by'].'\',\''.$key.'\')">Delete</button>';
+											}
+											echo "</td>";
 										}
 									}
 									$mc=array('mc1','mc2','mc3','mc4','mc5');
@@ -1260,7 +1283,11 @@ echo '<th>
 
 										}
 										else{
-											echo "<td><div class='comment'>".$row[$key]."</div></td>";
+											echo "<td><div class='comment'>".$row[$key]."</div>";
+											if($manager){
+												echo '<button class="btn btn-danger" onclick="removementor(\''.$row['by'].'\',\''.$key.'\')">Delete</button>';
+											}
+											echo "</td>";
 										}
 									}
 									$mc=array('mc1','mc2','mc3','mc4','mc5');
@@ -1524,7 +1551,11 @@ echo '<th>
 
 										}
 										else{
-											echo "<td><div class='comment'>".$row[$key]."</div></td>";
+											echo "<td><div class='comment'>".$row[$key]."</div>";
+											if($manager){
+												echo '<button class="btn btn-danger" onclick="removementor(\''.$row['by'].'\',\''.$key.'\')">Delete</button>';
+											}
+											echo "</td>";
 										}
 									}
 									$mc=array('mc1','mc2','mc3','mc4','mc5');
@@ -1591,6 +1622,17 @@ if($manager)
 				location.reload();
 			})
 	}';
+
+	echo 'function removementor(by,i){
+		$.post(\'php/removementor.php\',{
+				by:by,
+				field:i
+			}).done(function(data){
+				location.reload();
+			})
+	}
+
+	';
 }
 ?>
 		</script>
