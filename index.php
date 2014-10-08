@@ -26,7 +26,7 @@
 			<div class="row">
 				<h1 class="lead">Institute Technical Summer Projects 2014</h1>
 				<p class="tagline">Think.Create.Inspire</p>
-				<p><a class="btn btn-action btn-lg" role="button" href="register.php">REGISTER</a></p>
+				<p><a class="btn btn-action btn-lg" role="button" href="projects.php">BROWSE PROJECTS</a></p>
 			</div>
 		</div>
 	</header>

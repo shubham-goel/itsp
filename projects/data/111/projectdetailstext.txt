@@ -1,0 +1,226 @@
+<h3><strong><span style="font-family: 'Times New Roman';">How we achieved to our project in detail</span></strong> :</h3><ul>
+<li><strong>Our Approach for making piano keys.</strong></li></ul><p>We decided to give piano a diferent look so we thought of using lasers. We tok two long wooden plates and drilled holes according to the size of lasers (keeping in mind the width of piano keys). One wooded plate has holes according to the size of white keys and the other plate according to the black keys. We used plastic ruler to convert the point into a st. line thus generating the borders for the keys .We arranged the plates on a self made stand so that the projection looks like a piano </p><ul>
+<li><strong>For detecting finger movements.</strong></li></ul><p>This part of project was quite dramatic because we faced a lot of problems. We had to switch through different softwares again and again. Firstly we tried to use "processing software", we looked upon many codes, tutorials and references but that didn't work for us so we decided to try "Open CV" but again it wasn't successful.Then we finally switched to "Matlab" and were able to write the code that gave us the desired output.The webcam will detect the coordinates of fingertips and accordingly the sound will be played.</p><pre>% Capture the video frames using the videoinput function 
+% You have to replace the resolution &amp; your installed adaptor name. 
+% obj = videoinput('winvideo',1, 'MJPG_640x480');
+ obj = videoinput('winvideo',2, 'YUY2_640x480');
+% Set the properties of the video object 
+set(obj, 'FramesPerTrigger', Inf); 
+set(obj, 'ReturnedColorspace', 'rgb') 
+obj.FrameGrabInterval = 5;
+
+
+%start the video aquisition here 
+start(obj)
+
+
+% Set a loop that stop after 100 frames of aquisition 
+while(obj.FramesAcquired&lt;=200) 
+
+
+% Get the snapshot of the current frame 
+vid = getsnapshot(obj); 
+
+
+% Now to track blue objects in real time 
+% we have to subtract the red component 
+% from the grayscale image to extract the blue components in the image. 
+diff_im = imsubtract(vid(:,:,3), rgb2gray(vid)); 
+
+
+%Use a median filter to filter out noise 
+diff_im = medfilt2(diff_im, [3 3]); 
+% Convert the resulting grayscale image into a binary image. 
+diff_im = im2bw(diff_im,0.18); 
+
+
+% Remove all those pixels less than 300px 
+diff_im = bwareaopen(diff_im,300); 
+
+
+% Label all the connected components in the image. 
+bw = bwlabel(diff_im, 8); 
+
+
+% Here we do the image blob analysis. 
+% We get a set of properties for each labeled region. 
+stats = regionprops(bw, 'BoundingBox', 'Centroid'); 
+
+
+% Display the image 
+imshow(vid) 
+
+
+hold on 
+
+
+%This is a loop to bound the red objects in a rectangular box. 
+for object = 1:length(stats) 
+bb = stats(object).BoundingBox; 
+bc = stats(object).Centroid; 
+rectangle('Position',bb,'EdgeColor','r','LineWidth',2) 
+plot(bc(1),bc(2), '-m+') 
+a=text(bc(1)+15,bc(2), strcat('X: ', num2str(round(bc(1))), ' Y: ', num2str(round(bc(2))))); 
+set(a, 'FontName', 'Arial', 'FontWeight', 'bold', 'FontSize', 12, 'Color', 'yellow'); 
+
+
+if ((round(bc(1)))&gt;67 &amp; (round(bc(1))) &lt;89) &amp;&amp; ((round(bc(2)))&gt;0 &amp; (round(bc(2)))&lt;185) 
+    
+    [y]=audioread('w1.wma');
+    player = audioplayer(y,44100);
+    playblocking(player);
+else if((round(bc(1)))&gt;67 &amp; (round(bc(1))) &lt;111) &amp;&amp; ((round(bc(2)))&gt;185 &amp; (round(bc(2)))&lt;355) 
+    
+    [y]=audioread('w1.wma');
+    player = audioplayer(y,44100);
+    playblocking(player);
+else if((round(bc(1)))&gt;89 &amp; (round(bc(1))) &lt;153) &amp;&amp; ((round(bc(2)))&gt;0 &amp; (round(bc(2)))&lt;185) 
+    
+    [y]=audioread('b1.wma');
+    player = audioplayer(y,44100);
+    playblocking(player);
+else if((round(bc(1)))&gt;111 &amp; (round(bc(1))) &lt;195) &amp;&amp; ((round(bc(2)))&gt;185 &amp; (round(bc(2)))&lt;355) 
+    
+    [y]=audioread('w2.wma');
+    player = audioplayer(y,44100);
+    playblocking(player);
+
+
+else if((round(bc(1)))&gt;153 &amp; (round(bc(1))) &lt;231) &amp;&amp; ((round(bc(2)))&gt;0 &amp; (round(bc(2)))&lt;185) 
+    
+    [y]=audioread('b2.wma');
+    player = audioplayer(y,44100);
+    playblocking(player);
+    
+else if((round(bc(1)))&gt;231 &amp; (round(bc(1))) &lt;267) &amp;&amp; ((round(bc(2)))&gt;0 &amp; (round(bc(2)))&lt;185) 
+    
+    [y]=audioread('w3.wma');
+    player = audioplayer(y,44100);
+    playblocking(player);
+else if((round(bc(1)))&gt;195 &amp; (round(bc(1))) &lt;267) &amp;&amp; ((round(bc(2)))&gt;185 &amp; (round(bc(2)))&lt;355) 
+    
+    [y]=audioread('w3.wma');
+    player = audioplayer(y,44100);
+    playblocking(player);
+    
+else if((round(bc(1)))&gt;267 &amp; (round(bc(1))) &lt;292) &amp;&amp; ((round(bc(2)))&gt;0 &amp; (round(bc(2)))&lt;185) 
+    
+    [y]=audioread('w4.wma');
+    player = audioplayer(y,44100);
+    playblocking(player);
+else if((round(bc(1)))&gt;267 &amp; (round(bc(1))) &lt;316) &amp;&amp; ((round(bc(2)))&gt;185 &amp; (round(bc(2)))&lt;355) 
+    
+    [y]=audioread('w4.wma');
+    player = audioplayer(y,44100);
+    playblocking(player);
+    
+else if((round(bc(1)))&gt;292 &amp; (round(bc(1))) &lt;346) &amp;&amp; ((round(bc(2)))&gt;0 &amp; (round(bc(2)))&lt;185) 
+    
+    [y]=audioread('b3.wma');
+    player = audioplayer(y,44100);
+    playblocking(player);
+    
+else if((round(bc(1)))&gt;316 &amp; (round(bc(1))) &lt;375) &amp;&amp; ((round(bc(2)))&gt;185 &amp; (round(bc(2)))&lt;355) 
+    
+    [y]=audioread('w5.wma');
+    player = audioplayer(y,44100);
+    playblocking(player);
+    
+else if((round(bc(1)))&gt;346 &amp; (round(bc(1))) &lt;408) &amp;&amp; ((round(bc(2)))&gt;0 &amp; (round(bc(2)))&lt;185) 
+    
+    [y]=audioread('b4.wma');
+    player = audioplayer(y,44100);
+    playblocking(player);
+    
+else if((round(bc(1)))&gt;375 &amp; (round(bc(1))) &lt;441) &amp;&amp; ((round(bc(2)))&gt;185 &amp; (round(bc(2)))&lt;355) 
+    
+    [y]=audioread('w6.wma');
+    player = audioplayer(y,44100);
+    playblocking(player);
+
+
+else if((round(bc(1)))&gt;408 &amp; (round(bc(1))) &lt;471) &amp;&amp; ((round(bc(2)))&gt;0 &amp; (round(bc(2)))&lt;185) 
+    
+    [y]=audioread('b5.wma');
+    player = audioplayer(y,44100);
+    playblocking(player);
+    
+else if((round(bc(1)))&gt;471 &amp; (round(bc(1))) &lt;511) &amp;&amp; ((round(bc(2)))&gt;0 &amp; (round(bc(2)))&lt;185) 
+    
+    [y]=audioread('w7.wma');
+    player = audioplayer(y,44100);
+    playblocking(player);
+else if((round(bc(1)))&gt;441 &amp; (round(bc(1))) &lt;511) &amp;&amp; ((round(bc(2)))&gt;185 &amp; (round(bc(2)))&lt;355) 
+    
+    [y]=audioread('w7.wma');
+    player = audioplayer(y,44100);
+    playblocking(player);
+    
+else if((round(bc(1)))&gt;511 &amp; (round(bc(1))) &lt;539) &amp;&amp; ((round(bc(2)))&gt;0 &amp; (round(bc(2)))&lt;185) 
+    
+    [y]=audioread('w8.wma');
+    player = audioplayer(y,44100);
+    playblocking(player);
+else if((round(bc(1)))&gt;511 &amp; (round(bc(1))) &lt;566) &amp;&amp; ((round(bc(2)))&gt;185 &amp; (round(bc(2)))&lt;355) 
+    
+    [y]=audioread('w8.wma');
+    player = audioplayer(y,44100);
+    playblocking(player);
+    
+else if((round(bc(1)))&gt;539 &amp; (round(bc(1))) &lt;589) &amp;&amp; ((round(bc(2)))&gt;0 &amp; (round(bc(2)))&lt;185) 
+    
+    [y]=audioread('b6.wma');
+    player = audioplayer(y,44100);
+    playblocking(player);
+    
+else if((round(bc(1)))&gt;589 &amp; (round(bc(1))) &lt;612) &amp;&amp; ((round(bc(2)))&gt;0 &amp; (round(bc(2)))&lt;185) 
+    
+    [y]=audioread('w9.wma');
+    player = audioplayer(y,44100);
+    playblocking(player);
+else if((round(bc(1)))&gt;566 &amp; (round(bc(1))) &lt;612) &amp;&amp; ((round(bc(2)))&gt;185 &amp; (round(bc(2)))&lt;355) 
+    
+    [y]=audioread('w9.wma');
+    player = audioplayer(y,44100);
+    playblocking(player);
+     
+    
+    
+    end 
+    end 
+    end 
+    end 
+    end 
+    end 
+    end 
+    end 
+    end 
+    end 
+    end 
+    end 
+    end 
+    end 
+    end 
+    end 
+    end 
+    end 
+    end 
+    end 
+    
+end
+
+
+end
+
+
+hold off 
+end
+stop(obj)
+
+</pre><ul><li><strong>Construction of stand for holding lasers</strong></li></ul><p>This was the most challenging and time consuming part of our project. We used thick wooden bars to make our stand which could hold the weight of both the wooden plates ,we used feviquick to join the wooden bars.</p><p><strong><br></strong></p><ul>
+<li><strong>Giving finishing touch to our project</strong></li></ul><p>After we made our holder successfully we used spray paints to give final touch.</p><h3><strong>Problem Faced</strong></h3><p><strong>Our mentor was not in the institute so we dint get appropriate help for her side but thanks to TEAM STAB for guiding us .</strong></p><p><strong>The first step of the project was to get keys of piano using lasers... </strong></p><p>We tried a lot of things: </p><ul><li>Embedding lasers inside thermacol but it dint work because it broke every time by even a slightest jerk</li><li>Pasting lasers on cardboard using tape but that idea didnt worked well because of the shape of laser(cylindrical) they would disorient themselves when we did connections. </li><li>Pasting lasers on cardboard using fevicol failed because of we wer not getting desired result because of uneven shape of cardboard. </li><li>We even tried pasting straws on the cardboard that carried lasers but that too failed.</li></ul><p>So we decided to leave cardboard and use a block of wood instead..
+In the mean time we realised using fevicol,tape is not a good option in the long run so we decided to drill holes in wood block and put the lasers in it.
+But that wasnt the end.</p><p>
+How to get lines from laser dots on the surface??
+We incline the wood but that didnt worked.</p><p><strong>Another problem was regarding the software.</strong></p><ul><li>We were not able to use the processing software as it was desired .</li><li>We did a lot of study for the processing software but the code could not run.</li><li>Then the mentors told us to switch to Opencv.</li><li>So we started it but it could not be installed in windows.</li><li>Then we installed it in ubuntu but we could not figure out how to add some special image and sound libraries.</li><li>So now it was time to again switch the software and this time it was Matlab.</li><li>The problem faced in matlab were that we were not able to get the exact details of our external camera at first but we figured it out.</li></ul><p><strong>Final problem was designing the stand.</strong></p><ul>
+<li><strong></strong>Firstly we could not figure out how to make a stable stand.</li><li>So we had to think of a design where the lasers and camera were attached to the same stand.</li><li>Another issue was drilling holes for fitting lasers .</li><li>Even if the holes were drilled at correct distances still our laser line were not parallel.</li><li>For making the black keys of piano the holes needed to be very close to each other which gave problems while drilling.</li></ul><h3></h3><h3></h3>

@@ -1,0 +1,7 @@
+<div class="project-details" style="margin-top:-10%">
+									<h5 class="white-text red-border-bottom" >
+									Stand</h5>
+									<div class="details white-text">
+										 without camera attached
+									</div>
+								</div>

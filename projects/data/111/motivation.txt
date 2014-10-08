@@ -1,0 +1,8 @@
+<p>
+	We wanted to make something which is related to image processing and sounds.</p><p>
+	The motivation for this project came from the 6th sense device as well as The Iron Man movie.</p><p style="margin-left: 140px;"></p><p style="margin-left: 80px;">
+	<strong>
+	<span style="color: rgb(31, 73, 125);">Future of this technology</span></strong></p><p style="margin-left: 160px;">
+	<strong><span style="color: rgb(31, 73, 125);"><br>
+	</span></strong></p><iframe width="320" height="190" src="//www.youtube.com/embed/-KPhqy7ZwHU" frameborder="0" allowfullscreen="">
+</iframe>

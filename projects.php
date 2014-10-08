@@ -32,7 +32,8 @@ if($user=='manager')
 		min-width: 200px;
 	}
 	.btn-danger{
-		padding: 6px 12px
+		padding: 6px 12px;
+		display: none;
 	}
 </style>
 	<div class="navbar navbar-inverse navbar-fixed-top headroom" >
@@ -119,9 +120,8 @@ if($user=='manager')
 								Action
 							</th>
 							
-							';
-					if($manager||$mentor)
-					echo '<th>
+							';?>
+					       <th>
 								Mentor 1
 							</th>
 							<th>
@@ -129,24 +129,12 @@ if($user=='manager')
 							</th>
 							<th>
 								Mentor 3
-							</th>';
+							</th>
 				
-							?>
+							
 							
 							<th>
-								Mentor Comment-1
-							</th>
-							<th>
-								Mentor Comment-2
-							</th>
-							<th>
-								Mentor Comment-3
-							</th>
-							<th>
-								Mentor Comment-4
-							</th>
-							<th>
-								Mentor Comment-5
+								Manager
 							</th>
 							</tr>
 						</thead>
@@ -160,7 +148,7 @@ if($user=='manager')
 								echo "<td>".$row['team_id']."</td>";
 								$i+=1;
 								echo "<td>".$row['team_name']."</td>";
-								echo "<td title='".$row['project_desc']."''>".$row['project_name']."</td>";
+								echo "<td title='".$row['project_desc']."''>".'<a href="projects/?id='.$row['team_id'].'" target=_blank>'.$row['project_name']."</a>"."</td>";
 								echo '<td><div class="desc">'.$row['project_desc'].'</div></td>';
 								echo "<td>".$row['slot']."</td>";
 								echo "<td>".$row['club']."</td>";
@@ -178,13 +166,13 @@ if($user=='manager')
 									echo "<li>".$row['t4_name']."</li>";
 								
 
-								if($manager||$mentor){
+								
 									echo "Contact details :";
 								if($row['t1_email']!="")
 									echo "<br>".$row['t1_email']."";
 								if($row['t1_contact']!="")
 									echo "<br>".$row['t1_contact']."";
-								}
+								
 								
 								echo "</ul></td>";
 								if(file_exists("./abstract/".$row['by'].".pdf"))
@@ -246,46 +234,13 @@ if($user=='manager')
 											echo "</td>";
 										}
 									}
-									$mc=array('mc1','mc2','mc3','mc4','mc5');
-									foreach ($mc as $key ) {
-										if($row[$key]==""){
-										echo '<td><form id="'.$row['by'].$key.'-form">
-										<input type="hidden" name="by" value="'.$row['by'].'">
-										<input type="hidden" name="field" value="'.$key.'">
-										<input type="text" class="form-control" name="name" placeholder="name">
-										<textarea name="comment" placeholder="add comment"></textarea>
-										<button class="btn btn-success btn-xs" style="padding: 5px;margin: auto;margin-top: 3px;">ADD COMMENT</button></form>
-										<script>
-											$("#'.$row['by'].$key.'-form").submit(function(){
-												jQuery.ajax({
-													url:"php/addcomment.php",
-													type:"POST",
-													data:$(this).serialize(),
-													success:function(data){
-														$("#'.$row['by'].$key.'-form").html(data);
-													},
-													error:function(){
-														alert("error");
-													}
-												});
-												return false;
-											})
-										</script>
-										</td>';
-										}
-										else{
-											echo "<td><div class='comment'>".$row[$key]."</div></td>";
-										}
-									}								
 								}	
 								else{	
-
-									echo "<td><div class='comment'>".$row['mc1']."</div></td>";
-									echo "<td><div class='comment'>".$row['mc2']."</div></td>";
-									echo "<td><div class='comment'>".$row['mc3']."</div></td>";
-									echo "<td><div class='comment'>".$row['mc4']."</div></td>";
-									echo "<td><div class='comment'>".$row['mc5']."</div></td>";
+									echo "<td><div class='comment'>".$row['mentor1']."</div></td>";
+									echo "<td><div class='comment'>".$row['mentor2']."</div></td>";
+									echo "<td><div class='comment'>".$row['mentor3']."</div></td>";
 								}
+								echo "<td>".$row['manager']."</td>";
 								echo "</tr>";
 
 							}
@@ -329,8 +284,8 @@ if($user=='manager')
 							</th>
 							
 							';
-if($manager||$mentor)
-echo '<th>
+							if(1)
+							echo '<th>
 								Mentor 1
 							</th>
 							<th>
@@ -343,19 +298,7 @@ echo '<th>
 							?>
 							
 							<th>
-								Mentor Comment-1
-							</th>
-							<th>
-								Mentor Comment-2
-							</th>
-							<th>
-								Mentor Comment-3
-							</th>
-							<th>
-								Mentor Comment-4
-							</th>
-							<th>
-								Mentor Comment-5
+								Manager
 							</th>
 							</tr>
 						</thead>
@@ -369,7 +312,7 @@ echo '<th>
 								echo "<td>".$row['team_id']."</td>";
 								$i+=1;
 								echo "<td>".$row['team_name']."</td>";
-								echo "<td title='".$row['project_desc']."''>".$row['project_name']."</td>";
+								echo "<td title='".$row['project_desc']."''>".'<a href="projects/?id='.$row['team_id'].'" target=_blank>'.$row['project_name']."</a>"."</td>";
 								echo '<td><div class="desc">'.$row['project_desc'].'</div></td>';
 								echo "<td>".$row['slot']."</td>";
 								echo "<td>".$row['club']."</td>";
@@ -387,13 +330,13 @@ echo '<th>
 									echo "<li>".$row['t4_name']."</li>";
 								
 
-								if($manager||$mentor){
+								
 									echo "Contact details :";
 								if($row['t1_email']!="")
 									echo "<br>".$row['t1_email']."";
 								if($row['t1_contact']!="")
 									echo "<br>".$row['t1_contact']."";
-								}
+								
 								
 								echo "</ul></td>";
 								if(file_exists("./abstract/".$row['by'].".pdf"))
@@ -455,47 +398,14 @@ echo '<th>
 											}
 											echo "</td>";
 										}
-									}
-									$mc=array('mc1','mc2','mc3','mc4','mc5');
-									foreach ($mc as $key ) {
-										if($row[$key]==""){
-										echo '<td><form id="'.$row['by'].$key.'-form1">
-										<input type="hidden" name="by" value="'.$row['by'].'">
-										<input type="hidden" name="field" value="'.$key.'">
-										<input type="text" class="form-control" name="name" placeholder="name">
-										<textarea name="comment" placeholder="add comment"></textarea>
-										<button class="btn btn-success btn-xs" style="padding: 5px;margin: auto;margin-top: 3px;">ADD COMMENT</button></form>
-										<script>
-											$("#'.$row['by'].$key.'-form1").submit(function(){
-												jQuery.ajax({
-													url:"php/addcomment.php",
-													type:"POST",
-													data:$(this).serialize(),
-													success:function(data){
-														$("#'.$row['by'].$key.'-form1").html(data);
-													},
-													error:function(){
-														alert("error");
-													}
-												});
-												return false;
-											})
-										</script>
-										</td>';
-										}
-										else{
-											echo "<td><div class='comment'>".$row[$key]."</div></td>";
-										}
-									}								
+									}							
 								}	
 								else{	
-									
-									echo "<td><div class='comment'>".$row['mc1']."</div></td>";
-									echo "<td><div class='comment'>".$row['mc2']."</div></td>";
-									echo "<td><div class='comment'>".$row['mc3']."</div></td>";
-									echo "<td><div class='comment'>".$row['mc4']."</div></td>";
-									echo "<td><div class='comment'>".$row['mc5']."</div></td>";
+									echo "<td><div class='comment'>".$row['mentor1']."</div></td>";
+									echo "<td><div class='comment'>".$row['mentor2']."</div></td>";
+									echo "<td><div class='comment'>".$row['mentor3']."</div></td>";
 								}
+								echo "<td>".$row['manager']."</td>";
 								echo "</tr>";
 
 							}
@@ -539,7 +449,7 @@ echo '<th>
 							</th>
 							
 							';
-							if($manager||$mentor)
+							if(1)
 							echo '<th>
 								Mentor 1
 							</th>
@@ -553,19 +463,7 @@ echo '<th>
 							?>
 							
 							<th>
-								Mentor Comment-1
-							</th>
-							<th>
-								Mentor Comment-2
-							</th>
-							<th>
-								Mentor Comment-3
-							</th>
-							<th>
-								Mentor Comment-4
-							</th>
-							<th>
-								Mentor Comment-5
+								Manager
 							</th>
 							</tr>
 						</thead>
@@ -579,7 +477,7 @@ echo '<th>
 								echo "<td>".$row['team_id']."</td>";
 								$i+=1;
 								echo "<td>".$row['team_name']."</td>";
-								echo "<td title='".$row['project_desc']."''>".$row['project_name']."</td>";
+								echo "<td title='".$row['project_desc']."''>".'<a href="projects/?id='.$row['team_id'].'" target=_blank>'.$row['project_name']."</a>"."</td>";
 								echo '<td><div class="desc">'.$row['project_desc'].'</div></td>';
 								echo "<td>".$row['slot']."</td>";
 								echo "<td>".$row['club']."</td>";
@@ -597,13 +495,13 @@ echo '<th>
 									echo "<li>".$row['t4_name']."</li>";
 								
 
-								if($manager||$mentor){
+								
 									echo "Contact details :";
 								if($row['t1_email']!="")
 									echo "<br>".$row['t1_email']."";
 								if($row['t1_contact']!="")
 									echo "<br>".$row['t1_contact']."";
-								}
+								
 								
 								echo "</ul></td>";
 								if(file_exists("./abstract/".$row['by'].".pdf"))
@@ -665,46 +563,13 @@ echo '<th>
 											echo "</td>";
 										}
 									}
-									$mc=array('mc1','mc2','mc3','mc4','mc5');
-									foreach ($mc as $key ) {
-										if($row[$key]==""){
-										echo '<td><form id="'.$row['by'].$key.'-form2">
-										<input type="hidden" name="by" value="'.$row['by'].'">
-										<input type="hidden" name="field" value="'.$key.'">
-										<input type="text" class="form-control" name="name" placeholder="name">
-										<textarea name="comment" placeholder="add comment"></textarea>
-										<button class="btn btn-success btn-xs" style="padding: 5px;margin: auto;margin-top: 3px;">ADD COMMENT</button></form>
-										<script>
-											$("#'.$row['by'].$key.'-form2").submit(function(){
-												jQuery.ajax({
-													url:"php/addcomment.php",
-													type:"POST",
-													data:$(this).serialize(),
-													success:function(data){
-														$("#'.$row['by'].$key.'-form2").html(data);
-													},
-													error:function(){
-														alert("error");
-													}
-												});
-												return false;
-											})
-										</script>
-										</td>';
-										}
-										else{
-											echo "<td><div class='comment'>".$row[$key]."</div></td>";
-										}
-									}								
 								}	
 								else{
-										
-									echo "<td><div class='comment'>".$row['mc1']."</div></td>";
-									echo "<td><div class='comment'>".$row['mc2']."</div></td>";
-									echo "<td><div class='comment'>".$row['mc3']."</div></td>";
-									echo "<td><div class='comment'>".$row['mc4']."</div></td>";
-									echo "<td><div class='comment'>".$row['mc5']."</div></td>";
+									echo "<td><div class='comment'>".$row['mentor1']."</div></td>";
+									echo "<td><div class='comment'>".$row['mentor2']."</div></td>";
+									echo "<td><div class='comment'>".$row['mentor3']."</div></td>";
 								}
+								echo "<td>".$row['manager']."</td>";
 								echo "</tr>";
 
 							}
@@ -748,7 +613,7 @@ echo '<th>
 							</th>
 							
 							';
-							if($manager||$mentor)
+							if(1)
 							echo '<th>
 								Mentor 1
 							</th>
@@ -761,19 +626,7 @@ echo '<th>
 							?>
 							
 							<th>
-								Mentor Comment-1
-							</th>
-							<th>
-								Mentor Comment-2
-							</th>
-							<th>
-								Mentor Comment-3
-							</th>
-							<th>
-								Mentor Comment-4
-							</th>
-							<th>
-								Mentor Comment-5
+								Manager
 							</th>
 							</tr>
 						</thead>
@@ -787,7 +640,7 @@ echo '<th>
 								echo "<td>".$row['team_id']."</td>";
 								$i+=1;
 								echo "<td>".$row['team_name']."</td>";
-								echo "<td title='".$row['project_desc']."''>".$row['project_name']."</td>";
+								echo "<td title='".$row['project_desc']."''>".'<a href="projects/?id='.$row['team_id'].'" target=_blank>'.$row['project_name']."</a>"."</td>";
 								echo '<td><div class="desc">'.$row['project_desc'].'</div></td>';
 								echo "<td>".$row['slot']."</td>";
 								echo "<td>".$row['club']."</td>";
@@ -805,13 +658,13 @@ echo '<th>
 									echo "<li>".$row['t4_name']."</li>";
 								
 
-								if($manager||$mentor){
+								
 									echo "Contact details :";
 								if($row['t1_email']!="")
 									echo "<br>".$row['t1_email']."";
 								if($row['t1_contact']!="")
 									echo "<br>".$row['t1_contact']."";
-								}
+								
 								
 								echo "</ul></td>";
 								if(file_exists("./abstract/".$row['by'].".pdf"))
@@ -873,49 +726,13 @@ echo '<th>
 											echo "</td>";
 										}
 									}
-									$mc=array('mc1','mc2','mc3','mc4','mc5');
-									foreach ($mc as $key ) {
-										if($row[$key]==""){
-										echo '<td><form id="'.$row['by'].$key.'-form3">
-										<input type="hidden" name="by" value="'.$row['by'].'">
-										<input type="hidden" name="field" value="'.$key.'">
-										<input type="text" class="form-control" name="name" placeholder="name">
-										<textarea name="comment" placeholder="add comment"></textarea>
-										<button class="btn btn-success btn-xs" style="padding: 5px;margin: auto;margin-top: 3px;">ADD COMMENT</button></form>
-										<script>
-											$("#'.$row['by'].$key.'-form3").submit(function(){
-												jQuery.ajax({
-													url:"php/addcomment.php",
-													type:"POST",
-													data:$(this).serialize(),
-													success:function(data){
-														$("#'.$row['by'].$key.'-form3").html(data);
-													},
-													error:function(){
-														alert("error");
-													}
-												});
-												return false;
-											})
-										</script>
-										</td>';
-										}
-										else{
-											echo "<td><div class='comment'>".$row[$key]."</div></td>";
-										}
-									}								
 								}	
 								else{		
 									echo "<td><div class='comment'>".$row['mentor1']."</div></td>";
 									echo "<td><div class='comment'>".$row['mentor2']."</div></td>";
 									echo "<td><div class='comment'>".$row['mentor3']."</div></td>";
-					
-									echo "<td><div class='comment'>".$row['mc1']."</div></td>";
-									echo "<td><div class='comment'>".$row['mc2']."</div></td>";
-									echo "<td><div class='comment'>".$row['mc3']."</div></td>";
-									echo "<td><div class='comment'>".$row['mc4']."</div></td>";
-									echo "<td><div class='comment'>".$row['mc5']."</div></td>";
 								}
+								echo "<td>".$row['manager']."</td>";
 								echo "</tr>";
 
 							}
@@ -959,7 +776,7 @@ echo '<th>
 							</th>
 							
 							';
-							if($manager||$mentor)
+							if(1)
 							echo '<th>
 								Mentor 1
 							</th>
@@ -972,19 +789,7 @@ echo '<th>
 							?>
 							
 							<th>
-								Mentor Comment-1
-							</th>
-							<th>
-								Mentor Comment-2
-							</th>
-							<th>
-								Mentor Comment-3
-							</th>
-							<th>
-								Mentor Comment-4
-							</th>
-							<th>
-								Mentor Comment-5
+								Manager
 							</th>
 							</tr>
 						</thead>
@@ -998,7 +803,7 @@ echo '<th>
 								echo "<td>".$row['team_id']."</td>";
 								$i+=1;
 								echo "<td>".$row['team_name']."</td>";
-								echo "<td title='".$row['project_desc']."''>".$row['project_name']."</td>";
+								echo "<td title='".$row['project_desc']."''>".'<a href="projects/?id='.$row['team_id'].'" target=_blank>'.$row['project_name']."</a>"."</td>";
 								echo '<td><div class="desc">'.$row['project_desc'].'</div></td>';
 								echo "<td>".$row['slot']."</td>";
 								echo "<td>".$row['club']."</td>";
@@ -1016,13 +821,13 @@ echo '<th>
 									echo "<li>".$row['t4_name']."</li>";
 								
 
-								if($manager||$mentor){
+								
 									echo "Contact details :";
 								if($row['t1_email']!="")
 									echo "<br>".$row['t1_email']."";
 								if($row['t1_contact']!="")
 									echo "<br>".$row['t1_contact']."";
-								}
+								
 								
 								echo "</ul></td>";
 								if(file_exists("./abstract/".$row['by'].".pdf"))
@@ -1083,47 +888,14 @@ echo '<th>
 											}
 											echo "</td>";
 										}
-									}
-									$mc=array('mc1','mc2','mc3','mc4','mc5');
-									foreach ($mc as $key ) {
-										if($row[$key]==""){
-										echo '<td><form id="'.$row['by'].$key.'-form4">
-										<input type="hidden" name="by" value="'.$row['by'].'">
-										<input type="hidden" name="field" value="'.$key.'">
-										<input type="text" class="form-control" name="name" placeholder="name">
-										<textarea name="comment" placeholder="add comment"></textarea>
-										<button class="btn btn-success btn-xs" style="padding: 5px;margin: auto;margin-top: 3px;">ADD COMMENT</button></form>
-										<script>
-											$("#'.$row['by'].$key.'-form4").submit(function(){
-												jQuery.ajax({
-													url:"php/addcomment.php",
-													type:"POST",
-													data:$(this).serialize(),
-													success:function(data){
-														$("#'.$row['by'].$key.'-form4").html(data);
-													},
-													error:function(){
-														alert("error");
-													}
-												});
-												return false;
-											})
-										</script>
-										</td>';
-										}
-										else{
-											echo "<td><div class='comment'>".$row[$key]."</div></td>";
-										}
 									}								
 								}	
 								else{	
-									
-									echo "<td><div class='comment'>".$row['mc1']."</div></td>";
-									echo "<td><div class='comment'>".$row['mc2']."</div></td>";
-									echo "<td><div class='comment'>".$row['mc3']."</div></td>";
-									echo "<td><div class='comment'>".$row['mc4']."</div></td>";
-									echo "<td><div class='comment'>".$row['mc5']."</div></td>";
+									echo "<td><div class='comment'>".$row['mentor1']."</div></td>";
+									echo "<td><div class='comment'>".$row['mentor2']."</div></td>";
+									echo "<td><div class='comment'>".$row['mentor3']."</div></td>";
 								}
+								echo "<td>".$row['manager']."</td>";
 								echo "</tr>";
 
 							}
@@ -1165,7 +937,7 @@ echo '<th>
 							</th>
 							
 							';
-							if($manager||$mentor)
+							if(1)
 							echo '<th>
 								Mentor 1
 							</th>
@@ -1178,19 +950,7 @@ echo '<th>
 							?>
 							
 							<th>
-								Mentor Comment-1
-							</th>
-							<th>
-								Mentor Comment-2
-							</th>
-							<th>
-								Mentor Comment-3
-							</th>
-							<th>
-								Mentor Comment-4
-							</th>
-							<th>
-								Mentor Comment-5
+								Manager
 							</th>
 							</tr>
 						</thead>
@@ -1204,7 +964,7 @@ echo '<th>
 								echo "<td>".$row['team_id']."</td>";
 								$i+=1;
 								echo "<td>".$row['team_name']."</td>";
-								echo "<td title='".$row['project_desc']."''>".$row['project_name']."</td>";
+								echo "<td title='".$row['project_desc']."''>".'<a href="projects/?id='.$row['team_id'].'" target=_blank>'.$row['project_name']."</a>"."</td>";
 								echo '<td><div class="desc">'.$row['project_desc'].'</div></td>';
 								echo "<td>".$row['slot']."</td>";
 								echo "<td>".$row['club']."</td>";
@@ -1222,13 +982,13 @@ echo '<th>
 									echo "<li>".$row['t4_name']."</li>";
 								
 
-								if($manager||$mentor){
+								
 									echo "Contact details :";
 								if($row['t1_email']!="")
 									echo "<br>".$row['t1_email']."";
 								if($row['t1_contact']!="")
 									echo "<br>".$row['t1_contact']."";
-								}
+								
 								
 								echo "</ul></td>";
 								if(file_exists("./abstract/".$row['by'].".pdf"))
@@ -1289,47 +1049,14 @@ echo '<th>
 											}
 											echo "</td>";
 										}
-									}
-									$mc=array('mc1','mc2','mc3','mc4','mc5');
-									foreach ($mc as $key ) {
-										if($row[$key]==""){
-										echo '<td><form id="'.$row['by'].$key.'-form5">
-										<input type="hidden" name="by" value="'.$row['by'].'">
-										<input type="hidden" name="field" value="'.$key.'">
-										<input type="text" class="form-control" name="name" placeholder="name">
-										<textarea name="comment" placeholder="add comment"></textarea>
-										<button class="btn btn-success btn-xs" style="padding: 5px;margin: auto;margin-top: 3px;">ADD COMMENT</button></form>
-										<script>
-											$("#'.$row['by'].$key.'-form5").submit(function(){
-												jQuery.ajax({
-													url:"php/addcomment.php",
-													type:"POST",
-													data:$(this).serialize(),
-													success:function(data){
-														$("#'.$row['by'].$key.'-form5").html(data);
-													},
-													error:function(){
-														alert("error");
-													}
-												});
-												return false;
-											})
-										</script>
-										</td>';
-										}
-										else{
-											echo "<td><div class='comment'>".$row[$key]."</div></td>";
-										}
 									}								
 								}	
 								else{	
-									
-									echo "<td><div class='comment'>".$row['mc1']."</div></td>";
-									echo "<td><div class='comment'>".$row['mc2']."</div></td>";
-									echo "<td><div class='comment'>".$row['mc3']."</div></td>";
-									echo "<td><div class='comment'>".$row['mc4']."</div></td>";
-									echo "<td><div class='comment'>".$row['mc5']."</div></td>";
+									echo "<td><div class='comment'>".$row['mentor1']."</div></td>";
+									echo "<td><div class='comment'>".$row['mentor2']."</div></td>";
+									echo "<td><div class='comment'>".$row['mentor3']."</div></td>";
 								}
+								echo "<td>".$row['manager']."</td>";
 								echo "</tr>";
 
 							}
@@ -1370,10 +1097,10 @@ echo '<th>
 								while($row=mysqli_fetch_assoc($q))
 								{
 									echo "<tr>";
-									echo "<td title='".$row['project_desc']."''>".$row['project_name']."</td>";
+									echo "<td title='".$row['project_desc']."''>".'<a href="projects/?id='.$row['team_id'].'" target=_blank>'.$row['project_name']."</a>"."</td>";
 								
 									echo "<td>".$row['t1_name']."</td>";									
-									if($manager){
+									if($manager||$mentor){
 										echo "<td>".$row['t1_email']."</td>";
 									echo "<td>".$row['t1_contact']."</td>";
 									echo "<td>".$row['t1_hostel']."</td>";
@@ -1434,7 +1161,10 @@ echo '<th>
 							
 							';
 							if($manager||$mentor)
-							echo '<th>
+							echo '';
+				
+							?>
+							<th>
 								Mentor 1
 							</th>
 							<th>
@@ -1442,24 +1172,9 @@ echo '<th>
 							</th>
 							<th>
 								Mentor 3
-							</th>';
-				
-							?>
-							
-							<th>
-								Mentor Comment-1
 							</th>
 							<th>
-								Mentor Comment-2
-							</th>
-							<th>
-								Mentor Comment-3
-							</th>
-							<th>
-								Mentor Comment-4
-							</th>
-							<th>
-								Mentor Comment-5
+								Manager
 							</th>
 							</tr>
 						</thead>
@@ -1472,7 +1187,7 @@ echo '<th>
 								echo "<td>".$i."</td>";
 								$i+=1;
 								echo "<td>".$row['team_name']."</td>";
-								echo "<td title='".$row['project_desc']."''>".$row['project_name']."</td>";
+								echo "<td title='".$row['project_desc']."''>".'<a href="projects/?id='.$row['team_id'].'" target=_blank>'.$row['project_name']."</a>"."</td>";
 								echo '<td><div class="desc">'.$row['project_desc'].'</div></td>';
 								echo "<td>".$row['slot']."</td>";
 								echo "<td>".$row['club']."</td>";
@@ -1490,13 +1205,13 @@ echo '<th>
 									echo "<li>".$row['t4_name']."</li>";
 								
 
-								if($manager||$mentor){
+								
 									echo "Contact details :";
 								if($row['t1_email']!="")
 									echo "<br>".$row['t1_email']."";
 								if($row['t1_contact']!="")
 									echo "<br>".$row['t1_contact']."";
-								}
+								
 								
 								echo "</ul></td>";
 								if(file_exists("./abstract/".$row['by'].".pdf"))
@@ -1557,47 +1272,14 @@ echo '<th>
 											}
 											echo "</td>";
 										}
-									}
-									$mc=array('mc1','mc2','mc3','mc4','mc5');
-									foreach ($mc as $key ) {
-										if($row[$key]==""){
-										echo '<td><form id="'.$row['by'].$key.'-form7">
-										<input type="hidden" name="by" value="'.$row['by'].'">
-										<input type="hidden" name="field" value="'.$key.'">
-										<input type="text" class="form-control" name="name" placeholder="name">
-										<textarea name="comment" placeholder="add comment"></textarea>
-										<button class="btn btn-success btn-xs" style="padding: 5px;margin: auto;margin-top: 3px;">ADD COMMENT</button></form>
-										<script>
-											$("#'.$row['by'].$key.'-form7").submit(function(){
-												jQuery.ajax({
-													url:"php/addcomment.php",
-													type:"POST",
-													data:$(this).serialize(),
-													success:function(data){
-														$("#'.$row['by'].$key.'-form7").html(data);
-													},
-													error:function(){
-														alert("error");
-													}
-												});
-												return false;
-											})
-										</script>
-										</td>';
-										}
-										else{
-											echo "<td><div class='comment'>".$row[$key]."</div></td>";
-										}
-									}								
+									}					
 								}	
 								else{	
-									
-									echo "<td><div class='comment'>".$row['mc1']."</div></td>";
-									echo "<td><div class='comment'>".$row['mc2']."</div></td>";
-									echo "<td><div class='comment'>".$row['mc3']."</div></td>";
-									echo "<td><div class='comment'>".$row['mc4']."</div></td>";
-									echo "<td><div class='comment'>".$row['mc5']."</div></td>";
+									echo "<td><div class='comment'>".$row['mentor1']."</div></td>";
+									echo "<td><div class='comment'>".$row['mentor2']."</div></td>";
+									echo "<td><div class='comment'>".$row['mentor3']."</div></td>";
 								}
+								echo "<td>".$row['manager']."</td>";
 								echo "</tr>";
 
 							}

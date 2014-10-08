@@ -1,0 +1,2 @@
+<p>
+	A <strong>virtual piano</strong> is a form of computer input device whereby the image of a virtual piano is projected onto a surface: when a user touches the surface covered by an image of a key, the device records the corresponding keystroke and the corresponding notes are emitted from speakers of the computer.</p><p><img border="1" src="http://www.pinktentacle.com/images/xvirtual_piano.jpg.pagespeed.ic.KJAoJLWTwY.jpg" alt="Virtual piano"></p>

@@ -109,7 +109,7 @@ if(isset($_SESSION['outsider'])){
 				<div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
 					<div class="panel panel-default">
 						<div class="panel-body">
-							<h3 class="thin text-center">'.$project['project_name'].'</h3>
+							<h3 class="thin text-center"><a href="projects/?id='.$project['team_id'].'">'.$project['project_name'].'</a></h3>
 							<h5 class="thin text-center"><b>Team id:</b> '.$project['team_id'].'</h5>
 							<p class="text-center text-muted">'.$project['project_desc'].'</p>
 							<hr>
@@ -138,12 +138,11 @@ if(isset($_SESSION['outsider'])){
 										echo '</ul>
 								</div>';
 								echo '<hr>';
-							echo '<b>Comments from Mentors:</b>';							
-							echo "<br>".$project['mc1']."";
-							echo "<br>".$project['mc2']."";
-							echo "<br>".$project['mc3']."";
-							echo "<br>".$project['mc4']."";
-							echo "<br>".$project['mc5']."";
+							echo '<b>Allocated Mentors</b>';							
+							echo "<br>".$project['mentor1']."";
+							echo "<br>".$project['mentor2']."";
+							echo "<br>".$project['mentor3']."";
+							
 								echo '<hr>';
 						if($project['acceptedby']==""||$project['acceptedby']=="0"){
 								if($project['club']!="umic")
@@ -350,12 +349,10 @@ if(isset($_SESSION['outsider'])){
 								</div>
 								</form>';
 							echo '<hr>';
-							echo '<b>Comments from Mentors:</b>';							
-							echo "<br>".$project['mc1']."";
-							echo "<br>".$project['mc2']."";
-							echo "<br>".$project['mc3']."";
-							echo "<br>".$project['mc4']."";
-							echo "<br>".$project['mc5']."";
+							echo '<b>Allocated Mentors</b>';							
+							echo "<br>".$project['mentor1']."";
+							echo "<br>".$project['mentor2']."";
+							echo "<br>".$project['mentor3']."";
 						echo	'
 						<hr>';
 						

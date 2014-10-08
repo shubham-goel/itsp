@@ -13,6 +13,7 @@ if($user==175||$user==15||$user==56)
 if($user=='manager')
 	$manager=true;
 
+die("not allowed");
 if($manager){
 $by=$_POST['by'];
 $accept=$_POST['field'];

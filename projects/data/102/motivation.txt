@@ -1,0 +1,1 @@
+<p><span style="color: rgb(255, 255, 0);">Many people who have their legs paralysed have to depend on other<strong>s to perform most of their daily tasks.That's why we thought of making a bot which can </strong>move according to the hand movements and bring them some objects to them which they need.</span></p>

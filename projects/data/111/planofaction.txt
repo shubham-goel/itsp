@@ -1,0 +1,16 @@
+<h3>Week 1 (May 5th -11th)</h3><ul>
+<li>Planned
+<ul>
+<li>Learn what is required: image processing with processing software.</li><li>This includes basic data gathering, and searching for the required hardware and software resources .</li></ul></li></ul><ul>
+<li>Accomplished
+<ul>
+<li>we have learnt the basics of processing ,</li><li>we are now able to just use the webcam to capture images.</li></ul></li></ul><h3>Week 2 &amp; 3 (May 12th-25th )</h3><ul>
+<li>Planned<ul>
+<li>Finalising the software to matlab.</li><li>Start fabrication and the coding and image processing part.</li><li>Image processing with color detection.</li><li>Use multiple colors for detection.</li><li>Linking the input read with the respective sound.</li></ul></li><li>What you have accomplished?
+<ul>
+<li>Coding in Matlab was ready.</li><li>Image and sound processing worked properly.</li><li>Testing was done.</li></ul></li></ul><h3>Week 4 &amp; 5 (May 26th - June 8)</h3><ul>
+<li>What you have planned ?
+<ul>
+<li>To design the model.</li><li>Fit lasers and camera.</li><li>Check the coding part.</li><li>Give final touch to project.</li></ul></li><li>What you have accomplished?
+<ul>
+<li>We have designed the product.</li><li>Checked the input and output .</li><li>Product is ready.</li></ul></li></ul>
