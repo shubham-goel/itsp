@@ -10,7 +10,11 @@ while($row=mysqli_fetch_assoc($q))
 	if($row['slot']==2&&$flag==1){
         $flag=0;
 		$i=1;}
-	$str=$row['slot']."14WC".$i;
+	if($i<10)
+		$str=$row['slot']."WC0".$i;
+	else
+		$str=$row['slot']."WC".$i;
+
 	mysqli_query($con,"update itsp_project set team_id='".$str."' where `by` = '".$row['by']."'");
 	$i+=1;
 }
@@ -23,7 +27,12 @@ while($row=mysqli_fetch_assoc($q))
 	if($row['slot']==2&&$flag==1){
         $flag=0;
 		$i=1;}
-	$str=$row['slot']."14RE".$i;
+
+	if($i<10)
+		$str=$row['slot']."RE0".$i;
+	else
+		$str=$row['slot']."RE".$i;
+
 	mysqli_query($con,"update itsp_project set team_id='".$str."' where `by` = '".$row['by']."'");
 	$i+=1;
 }
@@ -36,7 +45,11 @@ while($row=mysqli_fetch_assoc($q))
 	if($row['slot']==2&&$flag==1){
         $flag=0;
 		$i=1;}
-	$str=$row['slot']."14AR".$i;
+
+	if($i<10)
+		$str=$row['slot']."AR0".$i;
+	else
+		$str=$row['slot']."AR".$i;
 	mysqli_query($con,"update itsp_project set team_id='".$str."' where `by` = '".$row['by']."'");
 	$i+=1;
 }
@@ -49,7 +62,10 @@ while($row=mysqli_fetch_assoc($q))
 	if($row['slot']==2&&$flag==1){
         $flag=0;
 		$i=1;}
-	$str=$row['slot']."14KA".$i;
+	if($i<10)
+		$str=$row['slot']."KA0".$i;
+	else
+		$str=$row['slot']."KA".$i;
 	mysqli_query($con,"update itsp_project set team_id='".$str."' where `by` = '".$row['by']."'");
 	$i+=1;
 }
@@ -62,7 +78,13 @@ while($row=mysqli_fetch_assoc($q))
 	if($row['slot']==2&&$flag==1){
         $flag=0;
 		$i=1;}
-	$str=$row['slot']."14MNP".$i;
+	if($i<10)
+		$str=$row['slot']."MNP0".$i;
+	else
+		$str=$row['slot']."MNP0".$i;
 	mysqli_query($con,"update itsp_project set team_id='".$str."' where `by` = '".$row['by']."'");
 	$i+=1;
 }
+
+header("Location:projects.php");
+
